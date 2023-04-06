@@ -15,17 +15,20 @@ import mech from "../Assets/Group7.png"
 import belt from "../Assets/image 7.png"
 import belt2 from "../Assets/image 9.png"
 import belt3 from "../Assets/image 8.png"
-
+import {Link} from "react-router-dom"
+import Nav from './Nav'
+import Footer from './Footer'
 export default function Main() {
   return (
     <>
+    <Nav/>
     <main>
     <header>
             <div className="flex justify-between">
                     <div className='ml-24 mt-24 w-[500px]'>
                     <h1 className='text-[#444444] text-5xl w-96 font-Interi '>Best spare parts Dealers</h1>
                     <p className='text-[#444444] text-lg font-Roboto font-bold pt-4 pb-4'>The answer is most of the countries' RARBG main sites are blocked for users so that's why we</p>
-                    <button className='bg-red-700 rounded-xl px-14 shadow-lg text-white py-1 '>Join us</button>
+                    <button className='bg-red-700 rounded-xl px-14 shadow-lg text-white py-1 '><Link to="/signup"> Join us</Link></button>
                     </div> 
                     <div className='md:mr-24 mt-24'>
                     <img src={ring} alt="ring" />  
@@ -251,6 +254,7 @@ export default function Main() {
 
      </section>
     </main>
+    <Footer/>
     </>
   )
 }

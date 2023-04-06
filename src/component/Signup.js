@@ -5,6 +5,7 @@ import { IoPersonOutline } from "react-icons/io5";
 import { FaGoogle, FaFacebook } from "react-icons/fa";
 import car from './car.png'
 import torus from './torus.png'
+import { Link } from "react-router-dom";
 function SignupForm() {
 
   const [email, setEmail] = useState("");
@@ -104,7 +105,7 @@ function SignupForm() {
             <h1 className="text-center text-gray-500">Already have an account?</h1>
             <div className="p-2">
            <button className="text-red-400 px-4 py-2 w-full rounded-full hover:bg-red-700 border border-red-400" type="submit">
-             Sign in
+            <Link to="/login">Sign in</Link> 
             </button>
             </div>
             </div>
