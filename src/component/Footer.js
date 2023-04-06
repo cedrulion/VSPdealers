@@ -3,7 +3,7 @@ import { HiOutlineMail } from "react-icons/hi";
 
 function Footer() {
     return (
-        <footer className='bg-gray-500 text-white text-sm fixed bottom-0 left-0 right-0'>
+        <footer className='bg-gray-500 text-white text-sm  bottom-0 left-0 right-0'>
      
             <h1 className='text-center'>SUBSCRIBE TO OUR NEWSLETTER AND GET EXCLUSIVE DEALS</h1>
            
