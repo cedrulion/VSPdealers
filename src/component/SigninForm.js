@@ -30,7 +30,7 @@ function SigninForm() {
        </div>
        </div>
       
-      <div className="bg-white p-8 rounded w-1/2 ">
+      <div className="bg-white p-8 rounded w-1/2">
         <h1 className="text-2xl text-center font-medium text-gray-800 mb-6">Sign in</h1>
         <form onSubmit={handleSubmit}>
        
