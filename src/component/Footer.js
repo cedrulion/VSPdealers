@@ -9,7 +9,7 @@ function Footer() {
            
            <div className='flex p-4'>
            <div className='mx-auto flex items-center'>
-               <div className=" border flex  border-gray-400 rounded mx-2">
+               <div className=" border flex  border-gray-400 rounded-lg mx-2">
                   <div className='pt-2'>
                    <HiOutlineMail className="mr-2 w-8 text-2xl opacity-[0.5]" />
                    </div>

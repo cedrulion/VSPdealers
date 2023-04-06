@@ -1,9 +1,10 @@
 import React from "react";
 import { useState } from "react";
 import { HiOutlineMail, HiOutlineLockClosed, HiEye } from "react-icons/hi";
-import { FaGoogle, FaFacebook } from "react-icons/fa";
+import { FaGoogle, FaFacebook,FaCaretLeft } from "react-icons/fa";
 import car from './car.png'
 import torus from './torus.png'
+import { Link } from "react-router-dom";
 function SigninForm() {
 
   const [email, setEmail] = useState("");
@@ -16,6 +17,9 @@ function SigninForm() {
 
   return (
     <div className="flex">
+      <div className="pt-12 pl-3">
+     <Link to="/signup"><FaCaretLeft className="text-red-600 text-4xl"/></Link> 
+      </div>
     <div className="w-full items-center flex justify-between">
       <div>
        <div className="md:flex hidden m-2 p-2 items-center"> 

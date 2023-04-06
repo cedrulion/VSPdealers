@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { HiOutlineMail, HiOutlineLockClosed, HiEye } from "react-icons/hi";
 import { IoPersonOutline } from "react-icons/io5";
-import { FaGoogle, FaFacebook } from "react-icons/fa";
+import { FaGoogle, FaFacebook,FaCaretLeft } from "react-icons/fa";
 import car from './car.png'
 import torus from './torus.png'
 import { Link } from "react-router-dom";
@@ -18,6 +18,9 @@ function SignupForm() {
 
   return (
     <div className="flex ">
+      <div className="pt-12 pl-3">
+     <Link to="/"><FaCaretLeft className="text-red-600 text-4xl"/></Link> 
+      </div>
     <div className="w-full flex justify-between mx-8">
    <div className="p-8">
     <div className="md:flex hidden m-2 p-2 items-center"> 
