@@ -6,7 +6,7 @@ import arrow from "../Assets/Vector1.png"
 import bodyPart from "../Assets/Group.png"
 import electronics from "../Assets/Group (1).png"
 import {FaHeadset,FaEuroSign,FaChevronRight} from "react-icons/fa"
-import {BsBagPlus,BsBookmark} from "react-icons/bs"
+import {BsBagPlus,BsBookmark,BsFillCaretRightFill,BsFillCaretLeftFill} from "react-icons/bs"
 import interior from "../Assets/mdi_car-seat.png"
 import lighting from "../Assets/Vector (1).png"
 import mechanics from "../Assets/Group (2).png"
@@ -262,7 +262,7 @@ export default function Main() {
              <p>Feedback from our</p>   
              <p className='ml-8'> customers</p>
         </div>
-        <div className='border border-black w-[1100px] h-[310px] rounded-xl mb-24 ml-20 pt-2 '>
+        <div className='border border-black w-[1100px] h-[350px] rounded-xl mb-24 ml-20 pt-2 '>
         <div className='w-[1000px] h-[280px]  ml-12  rounded-xl flex'>
                 <div className='w-1/2 h-[280px] '>
                 <img src={testimony} alt="testimony" className='w-full h-full object-cover overflow-hidden'/>
@@ -282,7 +282,19 @@ export default function Main() {
                 </div>
         
         </div>
+        <div className='flex mt-2 justify-center'>  
+                <BsFillCaretLeftFill className=' text-2xl mt-3'/>
+                <div className='text-red-500 border-[1.5px] border-red-500 h-12 w-12 rounded-full mx-12'>
+                 <h1 className='py-3 px-4 font-xl font-Ubuntu font-bold'>1</h1>
+                </div>
+                <BsFillCaretRightFill className='text-2xl mt-3'/>
+
         </div>
+        </div>
+
+
+        
+
 
      </section>
     </main>
