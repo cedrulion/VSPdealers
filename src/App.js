@@ -8,8 +8,7 @@ import {Routes,Route} from "react-router-dom"
 
 function App() {
   return (
-       <>
-       
+       <>     
        <Routes>
         <Route exact path="/" element={<Main/>}></Route>
         <Route exact path="/signup" element={<SignupForm/>}></Route>

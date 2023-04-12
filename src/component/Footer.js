@@ -2,6 +2,7 @@ import React from 'react'
 import { HiOutlineMail } from "react-icons/hi";
 
 function Footer() {
+    const date = new Date();
     return (
         <footer className='bg-[#606060] text-white text-sm  bottom-0 left-0 right-0'>
      
@@ -9,7 +10,7 @@ function Footer() {
            
            <div className='flex p-4'>
            <div className='mx-auto flex items-center'>
-               <div className=" border flex  border-gray-400 rounded-lg mx-2">
+               <div className=" border flex  border-gray-300 rounded-lg mx-2">
                   <div className='pt-2'>
                    <HiOutlineMail className="mr-2 w-8 text-2xl opacity-[0.5]" />
                    </div>
@@ -40,7 +41,7 @@ function Footer() {
           
          </div>
            
-         <h1 className='text-center font-Ubuntu'>@2023 Online car parts: Buy cheap auto parts and spare online</h1>
+         <h1 className='text-center font-Ubuntu'>&copy;{date.getFullYear()} Online car parts: Buy cheap auto parts and spare online</h1>
 
         </footer>
     )
