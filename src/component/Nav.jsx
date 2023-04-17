@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import {FaSistrix} from "react-icons/fa"
 import {BsCart3,BsHeart,BsFilterLeft} from "react-icons/bs"
+import ProductHeader from './ProductHeader'
 import {AiOutlineUser} from "react-icons/ai"
 import { useState } from 'react'
 export default function Nav() {
@@ -16,8 +17,8 @@ export default function Nav() {
     <div className='hidden bg-gradient-to-l from-[#C52F334D] to-red-400 w-full h-14  rounded-t-lg md:flex justify-between'>
         <div className=''>
         <ul className='capitalize md:flex text-[18px] space-x-28 ml-24 pt-3'>
-            <li className='bg-black text-white px-6 rounded-lg font-Ubuntu'><Link>home</Link></li>
-            <li className='text-[#606060] font-Ubuntu'><Link>products</Link></li>
+            <li className='bg-black text-white px-6 rounded-lg font-Ubuntu'><Link to="/">home</Link></li>
+            <li className='text-[#606060] font-Ubuntu'><Link to="/ProductHeader">products</Link></li>
             <li className='text-[#606060] font-Ubuntu'><Link>about</Link></li>
         </ul>
         </div>
@@ -53,8 +54,8 @@ export default function Nav() {
           </form>
           <div className={!navList ? 'block left-0 top-0 shadow-xl w-24':'hidden'}>
                     <ul className='capitalize text-[18px] ml-5 pt-3'>
-                        <li className='text-[#606060] font-Ubuntu hover:text-red-700'><Link>home</Link></li>
-                        <li className='text-[#606060] font-Ubuntu hover:text-red-700'><Link>products</Link></li>
+                        <li className='text-[#606060] font-Ubuntu hover:text-red-700'><Link to="/">home</Link></li>
+                        <li className='text-[#606060] font-Ubuntu hover:text-red-700'><Link to="/ProductHeader">products</Link></li>
                         <li className='text-[#606060] font-Ubuntu hover:text-red-700'><Link>about</Link></li>
                     </ul>
                  </div>
