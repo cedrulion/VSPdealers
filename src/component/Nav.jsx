@@ -18,13 +18,9 @@ export default function Nav() {
         <div className=''>
         <ul className='capitalize md:flex text-[18px] space-x-28 ml-24 pt-3'>
             <li className='bg-black text-white px-6 rounded-lg font-Ubuntu'><Link to="/">home</Link></li>
-<<<<<<< HEAD
-            <li className='text-[#606060] font-Ubuntu'><Link>products</Link></li>
+            <li className='text-[#606060] font-Ubuntu'><Link to="/product">products</Link></li>
             <li className='text-[#606060] font-Ubuntu'><Link to='/about'>about</Link></li>
-=======
-            <li className='text-[#606060] font-Ubuntu'><Link to="/ProductHeader">products</Link></li>
-            <li className='text-[#606060] font-Ubuntu'><Link>about</Link></li>
->>>>>>> ebdb7036c6ca4bea6a2ab2fd4bd7be095cca9862
+           
         </ul>
         </div>
         <div className='mr-16 '>
