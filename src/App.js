@@ -5,6 +5,7 @@ import SignupForm from './component/Signup';
 import ProductHeader from "./component/ProductHeader"
 import Main from './component/Main'
 import {Routes,Route} from "react-router-dom"
+import About from './component/about';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route exact path="/signup" element={<SignupForm/>}></Route>
         <Route exact path="/login" element={<SigninForm/>}></Route>
         <Route exact path="/product" elemnt={<ProductHeader/>}></Route>
+        <Route exact path='/about' element={<About/>}></Route>
        </Routes>
       
       </>

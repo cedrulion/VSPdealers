@@ -16,9 +16,9 @@ export default function Nav() {
     <div className='hidden bg-gradient-to-l from-[#C52F334D] to-red-400 w-full h-14  rounded-t-lg md:flex justify-between'>
         <div className=''>
         <ul className='capitalize md:flex text-[18px] space-x-28 ml-24 pt-3'>
-            <li className='bg-black text-white px-6 rounded-lg font-Ubuntu'><Link>home</Link></li>
+            <li className='bg-black text-white px-6 rounded-lg font-Ubuntu'><Link to="/">home</Link></li>
             <li className='text-[#606060] font-Ubuntu'><Link>products</Link></li>
-            <li className='text-[#606060] font-Ubuntu'><Link>about</Link></li>
+            <li className='text-[#606060] font-Ubuntu'><Link to='/about'>about</Link></li>
         </ul>
         </div>
         <div className='mr-16 '>
@@ -27,10 +27,8 @@ export default function Nav() {
                <li><BsHeart className='text-[#606060]' /></li>   
                <li><BsCart3 className='text-[#606060]' /></li>
                <li><AiOutlineUser className='text-[#606060]' /></li>
-            </ul>
-           
-        </div>
-       
+            </ul>         
+        </div>  
     </div>
     <div className='bg-white w-full h-14 md:hidden'>
           <div className='flex mt-2'>

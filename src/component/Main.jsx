@@ -15,6 +15,7 @@ import mech from "../Assets/Group7.png"
 import belt from "../Assets/image 7.png"
 import belt2 from "../Assets/image 9.png"
 import belt3 from "../Assets/image 8.png"
+import man from "../Assets/Mask group.png"
 import testimony from "../Assets/Rectangle 11.png"
 import quote from "../Assets/q.png"
 import {Link} from "react-router-dom"
@@ -33,23 +34,23 @@ export default function Main() {
                     <p className='text-[#444444] text-lg font-Roboto font-bold pt-4 pb-4'>The answer is most of the countries' RARBG main sites are blocked for users so that's why we</p>
                     <button className='bg-red-700 rounded-xl px-14 shadow-lg text-white py-1 '><Link to="/signup"> Join us</Link></button>
                     </div> 
-                    <div className='md:mr-24 mt-24'>
-                    <img src={ring} alt="ring" />  
+                    <div className='md:mr-24 absolute ml-[600px] mt-[-60px] '>
+                     <img src={man} alt="man"/>
                     </div>   
             </div>
-            <div className='absolute ml-[400px] md:ml-[500px] w-52 mt-[-70px]  '>
-                    <img src={well} alt="well"/>
+            <div className='absolute ml-[400px] md:ml-[500px] w-52 mt-12  '>
+                    <img src={ring} alt="well"/>
             </div>
     </header>
     {/* Card start here */}
-    <div className=' hidden md:block bg-[#C52F334D] w-14 h-14 rounded-full float-right shadow-lg mr-12 mt-32 cursor-pointer '>
+    <div className=' hidden md:block fixed bg-[#C52F334D] w-14 h-14 rounded-full  shadow-lg  ml-[1200px] mt-32 cursor-pointer '>
          <FaHeadset className='mx-5 my-5'/>
         </div>
      <section className='mt-52 md:ml-24 ml-44 pb-5'>
         
         <div className='grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
                 {/* First Card */}
-                <div className=' border-black border-[1.5px]  w-64 rounded-lg h-80'>
+                <div className=' border-black border-[1.5px]  w-64 rounded-lg h-80 '>
                         <div className='w-18 ml-20 mt-8'>
                                 <img src={wheels} alt="wheels"/>
                         </div>
@@ -140,9 +141,9 @@ export default function Main() {
      <section className='mt-12' >
         <div className='ml-16 mb-10'>
                 <h1 className='font-Roboto font-semibold text-xl ml-4 pt-4'>Popular Products</h1>
-                <div className='mt-6 grid grid-cols-3 border-[1px] border-black  rounded-lg w-[1100px] ml-3 px-5 py-4  bg-gray-100'>
+                <div className='mt-6 grid grid-cols-3 border-[1px] border-black  rounded-lg w-[1100px] ml-3 px-5 py-4  bg-gray-100 group'>
                         {/* 1 card */}
-                        <div className='pl-14'>
+                        <div className='pl-14 cursor-pointer group-hover:scale-[0.85] hover:!scale-100 duration-500 '>
                                 <div className='shadow-lg  w-64 '> 
                                        <div className='bg-white w-64 h-60 px-4'> 
                                                 <div className=' flex text-[#C52F33] space-x-2 justify-between items-center pt-3'>
@@ -179,7 +180,7 @@ export default function Main() {
                         </div>
 
                         {/* card2 */}
-                        <div className='pl-12'>
+                        <div className='pl-12 cursor-pointer group-hover:scale-[0.85] hover:!scale-100 duration-500'>
                                 <div className='shadow-lg  w-64 '> 
                                        <div className='bg-white w-64 h-60 px-4'> 
                                                 <div className=' flex text-[#C52F33] space-x-2 justify-between items-center pt-3'>
@@ -216,7 +217,7 @@ export default function Main() {
                         </div>
 
                         {/* card 3 */}
-                        <div className='pl-8'>
+                        <div className='pl-8 cursor-pointer group-hover:scale-[0.85] hover:!scale-100 duration-500'>
                                 <div className='shadow-lg  w-64 '> 
                                        <div className='bg-white w-64 h-60 px-4'> 
                                                 <div className=' flex text-[#C52F33] space-x-2 justify-between items-center pt-3'>
@@ -263,11 +264,11 @@ export default function Main() {
              <p className='ml-8'> customers</p>
         </div>
         <div className='border border-black w-[1100px] h-[350px] rounded-xl mb-24 ml-20 pt-2 '>
-        <div className='w-[1000px] h-[280px]  ml-12  rounded-xl flex'>
+        <div className='w-[1000px] h-[280px]  ml-12  flex'>
                 <div className='w-1/2 h-[280px] '>
-                <img src={testimony} alt="testimony" className='w-full h-full object-cover overflow-hidden'/>
+                <img src={testimony} alt="testimony" className='w-full h-full object-cover overflow-hidden rounded-l-lg'/>
                 </div>
-                <div className='bg-red-700  h-[280px] w-1/2 absolute ml-96 '>
+                <div className='bg-red-700  h-[280px] w-1/2 absolute ml-96  rounded-r-lg'>
                        <div className='pl-12 mt-8'>
                         <img src={quote} alt="quote" className='h-7 w-12'/>
                        </div>
@@ -283,19 +284,13 @@ export default function Main() {
         
         </div>
         <div className='flex mt-2 justify-center'>  
-                <BsFillCaretLeftFill className=' text-2xl mt-3'/>
+                <BsFillCaretLeftFill className=' text-2xl mt-3 cursor-pointer text-[#606060] hover:text-red-700'/>
                 <div className='text-red-500 border-[1.5px] border-red-500 h-12 w-12 rounded-full mx-12'>
                  <h1 className='py-3 px-4 font-xl font-Ubuntu font-bold'>1</h1>
                 </div>
-                <BsFillCaretRightFill className='text-2xl mt-3'/>
-
+                <BsFillCaretRightFill className='text-2xl mt-3 cursor-pointer text-[#606060] hover:text-red-700'/>
         </div>
         </div>
-
-
-        
-
-
      </section>
     </main>
     <Footer/>
