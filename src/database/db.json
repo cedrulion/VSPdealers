@@ -1,0 +1,27 @@
+{
+    "Products":[
+        {
+         "Id":"1",
+        "Title":"Belt Tightener Assembly",
+        "Price":"664",
+        "Type":"Engine",
+        "Description":"Specially designed & precisely manufactured engine parts to enhance the life mahindra empower engine and better fuel efficiency.",
+        "Image":"../Assets/image 7.png"
+ },
+ {
+    "Id":"2",
+    "Title":"Belt Tightener Assembly",
+    "Price":"664",
+    "Type":"Engine",
+    "Description":"Specially designed & precisely manufactured engine parts to enhance the life mahindra empower engine and better fuel efficiency.",
+    "Image":"../Assets/image 9.png"
+ },{
+    "Id":"3",
+    "Title":"Belt Tightener Assembly",
+    "Price":"664",
+    "Type":"Engine",
+    "Description":"Specially designed & precisely manufactured engine parts to enhance the life mahindra empower engine and better fuel efficiency.",
+    "Image":"../Assets/image 8.png"
+ }
+ ]
+}

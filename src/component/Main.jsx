@@ -32,13 +32,13 @@ export default function Main() {
                     <div className='ml-24 mt-24 w-[500px]'>
                     <h1 className='text-[#444444] text-5xl w-96 font-Interi '>Best spare parts Dealers</h1>
                     <p className='text-[#444444] text-lg font-Roboto font-bold pt-4 pb-4'>The answer is most of the countries' RARBG main sites are blocked for users so that's why we</p>
-                    <button className='bg-red-700 rounded-xl px-14 shadow-lg text-white py-1 '><Link to="/signup"> Join us</Link></button>
+                    <Link to="/signup"><button className='bg-red-700 rounded-xl px-14 shadow-lg text-white py-1 '> Join us</button></Link>
                     </div> 
                     <div className='md:mr-24 absolute ml-[600px] mt-[-60px] '>
                      <img src={man} alt="man"/>
                     </div>   
             </div>
-            <div className='absolute ml-[400px] md:ml-[500px] w-52 mt-12  '>
+            <div className='absolute ml-[400px] md:ml-[500px] w-52 mt-20  '>
                     <img src={ring} alt="well"/>
             </div>
     </header>
@@ -46,7 +46,7 @@ export default function Main() {
     <div className=' hidden md:block fixed bg-[#C52F334D] w-14 h-14 rounded-full  shadow-lg  ml-[1200px] mt-32 cursor-pointer '>
          <FaHeadset className='mx-5 my-5'/>
         </div>
-     <section className='mt-52 md:ml-24 ml-44 pb-5'>
+     <section className='mt-72 md:ml-24 ml-44 pb-5'>
         
         <div className='grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
                 {/* First Card */}

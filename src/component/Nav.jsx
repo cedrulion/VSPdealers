@@ -17,7 +17,7 @@ export default function Nav() {
     <div className='hidden bg-gradient-to-l from-[#C52F334D] to-red-400 w-full h-14  rounded-t-lg md:flex justify-between'>
         <div className=''>
         <ul className='capitalize md:flex text-[18px] space-x-28 ml-24 pt-3'>
-            <li className='bg-black text-white px-6 rounded-lg font-Ubuntu'><Link to="/">home</Link></li>
+            <li className=' text-[#606060] px-6 rounded-lg font-Ubuntu'><Link to="/">home</Link></li>
             <li className='text-[#606060] font-Ubuntu'><Link to="/product">products</Link></li>
             <li className='text-[#606060] font-Ubuntu'><Link to='/about'>about</Link></li>
            
