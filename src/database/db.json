@@ -1,27 +1,51 @@
 {
-    "Products":[
-        {
-         "Id":"1",
-        "Title":"Belt Tightener Assembly",
-        "Price":"664",
-        "Type":"Engine",
-        "Description":"Specially designed & precisely manufactured engine parts to enhance the life mahindra empower engine and better fuel efficiency.",
-        "Image":"../Assets/image 7.png"
- },
- {
-    "Id":"2",
-    "Title":"Belt Tightener Assembly",
-    "Price":"664",
-    "Type":"Engine",
-    "Description":"Specially designed & precisely manufactured engine parts to enhance the life mahindra empower engine and better fuel efficiency.",
-    "Image":"../Assets/image 9.png"
- },{
-    "Id":"3",
-    "Title":"Belt Tightener Assembly",
-    "Price":"664",
-    "Type":"Engine",
-    "Description":"Specially designed & precisely manufactured engine parts to enhance the life mahindra empower engine and better fuel efficiency.",
-    "Image":"../Assets/image 8.png"
- }
- ]
+  "Products": [
+    {
+      "Title": "Belt Tightener Assembly",
+      "Description": "Specially designed & precisely manufactured engine parts to enhance the life mahindra empower engine and better fuel efficiency.",
+      "Image": "../Assets/image 7.png",
+      "Type": "Engine",
+      "Price": "20000",
+      "id": 1
+    },
+    {
+      "Title": "elt Tightener Assembly",
+      "Description": "Specially designed & precisely manufactured engine parts to enhance the life mahindra empower engine and better fuel efficiency.",
+      "Image": "../Assets/image 9.png",
+      "Type": "Engine",
+      "Price": "25000",
+      "id": 2
+    },
+    {
+      "Title": "Tightener Assembly",
+      "Description": "Specially designed & precisely manufactured engine parts to enhance the life mahindra",
+      "Image": "../Assets/image 9.png",
+      "Type": "Engine",
+      "Price": "30000",
+      "id": 3
+    }
+  ],
+  "Signup": [
+    {
+      "names": "cedric",
+      "email": "cedric@gmail.com",
+      "password": "messi",
+      "Cpassword": "messi",
+      "id": 1
+    },
+    {
+      "names": "cedric",
+      "email": "cedric@gmail.com",
+      "password": "messi",
+      "Cpassword": "messi",
+      "id": 2
+    },
+    {
+      "names": "",
+      "email": "",
+      "password": "",
+      "Cpassword": "",
+      "id": 3
+    }
+  ]
 }

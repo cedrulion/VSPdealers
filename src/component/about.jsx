@@ -12,7 +12,7 @@ export default function About() {
     <>
     <Nav/>    
     <section>
-        <div className='flex '>
+        <div className='flex min-h-screen'>
             <div className='ml-28 mt-20'>
                 <h1 className='font-Ubuntu font-bold text-3xl text-[#606060]'>About us</h1>
                 <div className='mt-12 w-72 ml-12 font-Ubuntu text-xl'>
@@ -21,7 +21,7 @@ export default function About() {
                 </div>
             </div> 
             <div className='mt-6 ml-[300px] '>
-                <div className='absolute w-96 h-[500px] ml-5'>
+                <div className='absolute w-96 h-[500px] ml-5'> 
                 <img src={car} alt="car" className='w-full h-full object-cover'/>
                 </div>
                 <div className='bg-red-700 w-44 h-32  mt-[400px]'>
@@ -85,4 +85,3 @@ export default function About() {
     </>
   )
 }
-

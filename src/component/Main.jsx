@@ -1,6 +1,6 @@
 import React from 'react'
 import ring from "../Assets/Group 51.png"
-import well from "../Assets/Group 65.png"
+
 import wheels from "../Assets/Vector.png"
 import arrow from "../Assets/Vector1.png"
 import bodyPart from "../Assets/Group.png"
@@ -10,14 +10,25 @@ import {BsBagPlus,BsBookmark,BsFillCaretRightFill,BsFillCaretLeftFill} from "rea
 import interior from "../Assets/mdi_car-seat.png"
 import lighting from "../Assets/Vector (1).png"
 import mechanics from "../Assets/Group (2).png"
-import inter from "../Assets/Group 66.png"
-import mech from "../Assets/Group7.png"
+
 import belt from "../Assets/image 7.png"
 import belt2 from "../Assets/image 9.png"
 import belt3 from "../Assets/image 8.png"
 import man from "../Assets/Mask group.png"
 import testimony from "../Assets/Rectangle 11.png"
 import quote from "../Assets/q.png"
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import './card.css';
+
+// import required modules
+import { Pagination, Navigation } from "swiper";
+
+import Group64 from '../component/Group64.png'
+import Group85 from '../component/Group85.png'
+
 import {Link} from "react-router-dom"
 import Nav from './Nav'
 import Footer from './Footer'
@@ -28,17 +39,17 @@ export default function Main() {
     <Nav/>
     <main>
     <header>
-            <div className="flex justify-between">
-                    <div className='ml-24 mt-24 w-[500px]'>
+            <div className="flex justify-between ">
+                    <div className='ml-24 mt-24 w-1/2'>
                     <h1 className='text-[#444444] text-5xl w-96 font-Interi '>Best spare parts Dealers</h1>
                     <p className='text-[#444444] text-lg font-Roboto font-bold pt-4 pb-4'>The answer is most of the countries' RARBG main sites are blocked for users so that's why we</p>
                     <Link to="/signup"><button className='bg-red-700 rounded-xl px-14 shadow-lg text-white py-1 '> Join us</button></Link>
                     </div> 
-                    <div className='md:mr-24 absolute ml-[600px] mt-[-60px] '>
+                    <div className='md:mr-24 absolute ml-[600px] mt-[-60px]'>
                      <img src={man} alt="man"/>
                     </div>   
             </div>
-            <div className='absolute ml-[400px] md:ml-[500px] w-52 mt-20  '>
+            <div className='absolute ml-20 md:ml-25 lg:ml-30 w-52 mt-20  '>
                     <img src={ring} alt="well"/>
             </div>
     </header>
@@ -100,9 +111,7 @@ export default function Main() {
                         <div className=' mx-24 my-6 border-[#C52F33] border-[1.5px] w-12 h-12 rounded-full cursor-pointer'>
                                 <img src={arrow} alt="arrow" className='py-3 px-3'/>
                         </div>
-                        <div className='absolute mt-[-150px] '>
-                             <img src={inter} alt="alt" className='ml-[-100px] w-64'/>   
-                        </div>   
+                      
                 </div>
                 {/* 5 card */}
                 <div className=' border-black border-[1.5px]  w-64 rounded-lg h-80 lg:ml-[-40px] '>
@@ -131,9 +140,7 @@ export default function Main() {
                                 <img src={arrow} alt="arrow" className='py-3 px-3'/>
                         </div>
                 </div>
-                <div className=" hidden md:block absolute w-72  ml-[900px] mt-64">
-                        <img src={mech} alt="mech"/>
-                </div>
+                
                 
         </div>
      </section>
@@ -141,7 +148,7 @@ export default function Main() {
      <section className='mt-12' >
         <div className='ml-16 mb-10'>
                 <h1 className='font-Roboto font-semibold text-xl ml-4 pt-4'>Popular Products</h1>
-                <div className='mt-6 grid grid-cols-3 border-[1px] border-black  rounded-lg w-[1100px] ml-3 px-5 py-4  bg-gray-100 group'>
+                <div className='mt-6 grid grid-cols-3 border-[1px] border-black  rounded-lg w-full  px-5 py-2  bg-gray-100 group pr-4 '>
                         {/* 1 card */}
                         <div className='pl-14 cursor-pointer group-hover:scale-[0.85] hover:!scale-100 duration-500 '>
                                 <div className='shadow-lg  w-64 '> 
@@ -258,18 +265,16 @@ export default function Main() {
 
      </section>
      {/* Testimonies Section */}
-     <section className='mt-24'>
-        <div className='ml-[450px] mb-3 font-Ubuntu text-xl font-bold'>
-             <p>Feedback from our</p>   
-             <p className='ml-8'> customers</p>
-        </div>
-        <div className='border border-black w-[1100px] h-[350px] rounded-xl mb-24 ml-20 pt-2 '>
-        <div className='w-[1000px] h-[280px]  ml-12  flex'>
-                <div className='w-1/2 h-[280px] '>
-                <img src={testimony} alt="testimony" className='w-full h-full object-cover overflow-hidden rounded-l-lg'/>
-                </div>
-                <div className='bg-red-700  h-[280px] w-1/2 absolute ml-96  rounded-r-lg'>
-                       <div className='pl-12 mt-8'>
+     <section className='mt-24 '>
+       <div class='mb-3 font-Ubuntu text-xl font-bold mx-auto text-center'>
+    <p>Feedback from our</p>   
+    <p className='ml-8'>customers</p>
+</div>
+        <div className=' w-1/2 h-[350px] rounded-xl mb-24  mx-auto pt-2 '>
+        <div className='ml-2 h-[280px] flex justify-between'>
+                
+                <div className=' h-[280px] w-1/2 absolute  rounded-r-lg'>
+                       {/* <div className='pl-12 mt-8'>
                         <img src={quote} alt="quote" className='h-7 w-12'/>
                        </div>
                         <p className='text-white text-xl font-semibold px-12 '>
@@ -279,17 +284,28 @@ export default function Main() {
                         <div className='mt-5 text-white font-Ubuntu  pl-12 opacity-[0.5]'>
                         <p className='text-white font-bold text-xl'>Jasper Nick</p>
                         <p className='text-sm pt-2'>An ISUZU D‑Max 2002 Owner</p>
-                        </div>
+                        </div> */}
+                         <Swiper
+        pagination={{
+          type: "fraction",
+        }}
+        navigation={true}
+        modules={[Pagination, Navigation]}
+        className="mySwiper mt-3 cursor-pointer text-[#606060] hover:text-red-700"
+      >
+        <SwiperSlide>
+          <img src={Group64} alt=""/>
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={Group85} alt=""/>
+        </SwiperSlide>
+        
+      </Swiper>
+
                 </div>
         
         </div>
-        <div className='flex mt-2 justify-center'>  
-                <BsFillCaretLeftFill className=' text-2xl mt-3 cursor-pointer text-[#606060] hover:text-red-700'/>
-                <div className='text-red-500 border-[1.5px] border-red-500 h-12 w-12 rounded-full mx-12'>
-                 <h1 className='py-3 px-4 font-xl font-Ubuntu font-bold'>1</h1>
-                </div>
-                <BsFillCaretRightFill className='text-2xl mt-3 cursor-pointer text-[#606060] hover:text-red-700'/>
-        </div>
+       
         </div>
      </section>
     </main>

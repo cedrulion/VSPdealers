@@ -1,11 +1,31 @@
-import React from "react";
+import React, { useState } from 'react';
+import axios from 'axios';
 import { HiOutlineMail, HiOutlineLockClosed, HiEye } from "react-icons/hi";
 import { IoPersonOutline } from "react-icons/io5";
 import { FaGoogle, FaFacebookF,FaCaretLeft } from "react-icons/fa";
 import car from './car.png'
 import torus from './torus.png'
 import { Link } from "react-router-dom";
+
 function SignupForm() {
+  const [names, setNames] = useState("")
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [Cpassword, setCpassword] = useState("")
+
+  
+  const Register =  (event) => {
+    event.preventDefault();
+ axios.post(`http://localhost:3000/Signup`,{
+  names,
+  email,
+  password,
+  Cpassword,
+}
+
+)
+ 
+  }
   return (
     <div className="flex ">
           <div className="pt-12 pl-3">
@@ -34,6 +54,7 @@ function SignupForm() {
                       <input
                           className=" p-2 w-full rounded-full h-9 font-Ubuntu  "
                           placeholder='Names'
+                          onChange={(event) => setNames(event.target.value)}
                         />
                   </div>
                   <div className="mb-4 flex items-center  border-2  rounded-full mx-10">
@@ -43,6 +64,7 @@ function SignupForm() {
                       <input
                         className=" p-2 w-full rounded-full h-9 font-Ubuntu "
                         placeholder='Email'
+                        onChange={(event) => setEmail(event.target.value)}
                       />
                   </div>
 
@@ -53,6 +75,7 @@ function SignupForm() {
                       <input
                         className="p-2 w-full rounded-full h-9 font-Ubuntu"
                         placeholder='Password'
+                        onChange={(event) => setPassword(event.target.value)}
                       />
                       <HiEye className="h-5 w-5" />
                   </div> 
@@ -63,6 +86,7 @@ function SignupForm() {
                       <input
                         className="p-2 w-full rounded-full h-9 font-Ubuntu"
                         placeholder='Confirm Password'
+                        onChange={(event) => setCpassword(event.target.value)}
                       />
                       <HiEye className="h-5 w-5" />
                   </div> 
@@ -71,7 +95,7 @@ function SignupForm() {
 
                   <div className="sm-flex">
                       <div className="mx-10">
-                            <button className="bg-red-500 text-white px-4 py-2 w-full rounded-full hover:bg-white hover:shadow-xl  hover:text-red-700 focus:outline-none focus:shadow-outline-blue active:bg-red-800" type="submit">
+                            <button className="bg-red-500 text-white px-4 py-2 w-full rounded-full hover:bg-white hover:shadow-xl  hover:text-red-700 focus:outline-none focus:shadow-outline-blue active:bg-red-800" type="submit" onClick={Register}>
                               Sign up
                             </button>
                             </div>
