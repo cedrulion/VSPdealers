@@ -4,7 +4,7 @@ import { HiOutlineMail } from "react-icons/hi";
 function Footer() {
     const date = new Date();
     return (
-        <footer className='bg-[#606060] text-white text-sm  z-10 mb-0 w-full'>
+        <footer className='bg-[#606060] text-white text-sm  z-10 mb-0 min-w-screen'>
      
             <h1 className='text-center font-Ubuntu font-semibold pt-4'>SUBSCRIBE TO OUR NEWSLETTER AND GET EXCLUSIVE DEALS</h1>
            

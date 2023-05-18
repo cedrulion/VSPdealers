@@ -1,76 +1,50 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import AdminNav from './AdminNav';
-import { NavLink, Outlet } from 'react-router-dom'
 
 function Dashboard() {
-  const menu=[
-    {
-    path:"Overview",
-    name:"Overview",
-   
-    },
-    {
-    path:"Client",
-    name:"Clients",
-  
-    },
-    {
-    path:"Addproduct",
-    name:"Products",
-    
-    },
-    {
-    path:"Payment",
-    name:"Payment",
-   
-    },
-   
-    ]
-  
   return (
-    <div className='w-full'>
-    
-       
-       <div className=' bg-gray-200 w-full  '>
-        
-       
-
-         
-       
-       
-        <div className='capitalize flex gap-8'>
-           
-        {
-				menu.map((item, index)=>(
-					<NavLink to={item.path}
-					key={index}
-					className=' text-black hover:text-white hover:bg-blue-500 py-4 px-4 items-center'>
-				
-						<div className=' text-xl font-semibold tracking-wide  '>{item.name}</div>
-					</NavLink>
-				))
-			}
-        	</div>
-		<main className=' w-full'><Outlet/>
-    
-    </main>
-  
+    <div className="w-full bg-gray-200 min-h-screen">
+         <h1 className="text-2xl font-bold ml-5">Dashboard</h1>
+       <div className='p-6'>
+          <div className='border border-gray-300 rounded-full'>
+        <h2 className="text-2xl font-bold text-center">Overview</h2>
         </div>
-        
-        
-      {/* <nav className="bg-gray-200  shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            <div className="flex-shrink-0">
-              <h1 className="text-2xl font-bold text-gray-800">Dashboard</h1>
-            </div>
+        <div className='flex py-6 gap-8'>
+      <div className="flex flex-col w-full">
+     
+        <div className="flex h-full w-50 ">
+          <div className="flex flex-col w-full bg-white p-4 m-2 rounded-2xl">
+            <h2 className="text-lg">Orders</h2>
+            <p className="text-2xl py-6">10</p>
+          </div>
+          <div className="flex flex-col w-full bg-white p-4 m-2 rounded-2xl">
+            <h2 className="text-lg">Products</h2>
+            <p className="text-2xl py-6">20</p>
+          </div>
+          <div className="flex flex-col w-full bg-white p-4 m-2 rounded-2xl ">
+            <h2 className="text-lg">Customers</h2>
+            <p className="text-2xl py-6">5</p>
           </div>
         </div>
-      </nav> */}
-     
-   
-   
+      </div>
+      <div className="bg-white w-1/2 rounded-2xl ">
+        <h2 className="text-lg m-4">Popular Products</h2>
+        <div className=" justify-center">
+          <div className="flex flex-col  p-4 m-2">
+            <h3 className="text-lg">Product A</h3>
+            <p className="text-sm">Rating: 4.5</p>
+          </div>
+          <div className="flex flex-col  p-4 m-2">
+            <h3 className="text-lg">Product B</h3>
+            <p className="text-sm">Rating: 4.2</p>
+          </div>
+          <div className="flex flex-col  p-4 m-2">
+            <h3 className="text-lg">Product C</h3>
+            <p className="text-sm">Rating: 4.0</p>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
     </div>
   );
 }

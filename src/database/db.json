@@ -18,11 +18,19 @@
     },
     {
       "Title": "Tightener Assembly",
-      "Description": "Specially designed & precisely manufactured engine parts to enhance the life mahindra",
+      "Description": "Specially designed & precisely manufactured engine parts to enhance the life mahindra empower engine and better fuel efficiency.",
       "Image": "../Assets/image 9.png",
       "Type": "Engine",
       "Price": "30000",
       "id": 3
+    },
+    {
+      "Title": "Engine mount ",
+      "Description": "Specially designed & precisely manufactured engine parts to enhance the life mahindra empower engine and better fuel efficiency.",
+      "Image": "../Assets/image 9.png",
+      "Type": "Engine",
+      "Price": "665",
+      "id": 4
     }
   ],
   "Signup": [
@@ -41,11 +49,18 @@
       "id": 2
     },
     {
-      "names": "",
-      "email": "",
-      "password": "",
-      "Cpassword": "",
-      "id": 3
+      "names": "lionel",
+      "email": "lionel",
+      "password": "lionel",
+      "Cpassword": "lionel",
+      "id": 5
+    },
+    {
+      "names": "manzi",
+      "email": "example",
+      "password": "jjjj",
+      "Cpassword": "jjjj",
+      "id": 6
     }
   ]
 }

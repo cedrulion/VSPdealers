@@ -7,25 +7,33 @@ import car from './car.png'
 import torus from './torus.png'
 import { Link } from "react-router-dom";
 
-function SignupForm() {
-  const [names, setNames] = useState("")
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
-  const [Cpassword, setCpassword] = useState("")
+const SignupForm =() => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    password: '',
+    password_confirmation: '',
+  })
+
 
   
-  const Register =  (event) => {
-    event.preventDefault();
- axios.post(`http://localhost:3000/Signup`,{
-  names,
-  email,
-  password,
-  Cpassword,
-}
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prevState) => ({ ...prevState, [name]: value }));
+  };
 
-)
- 
-  }
+  const Register =  async (event) => {
+    event.preventDefault();
+    try {
+ await axios.post(`http://shemaherbez-001-site1.atempurl.com/api/tokens/register`, formData);
+ console.log('Signup successful');
+ alert('Signup successful!');  } 
+ catch (error) {
+  console.error('Signup failed', error);
+  alert('Signup failed');
+}
+};
+
   return (
     <div className="flex ">
           <div className="pt-12 pl-3">
@@ -46,7 +54,7 @@ function SignupForm() {
               </div>
               <div className="rounded shadow-md w-full max-w-md mr-10 mt-8 pt-4 border-red-500 border">
                 <h1 className="text-2xl text-center font-Ubuntu font-medium text-black mb-6">Sign up</h1>
-                <form >
+                <form onSubmit={Register}>
                 <div className="mb-4 flex items-center border-2  rounded-full mx-10 ">
                       <div className="pl-3 text-xl">
                         <IoPersonOutline/>
@@ -54,7 +62,8 @@ function SignupForm() {
                       <input
                           className=" p-2 w-full rounded-full h-9 font-Ubuntu  "
                           placeholder='Names'
-                          onChange={(event) => setNames(event.target.value)}
+                          name='name'
+                          onChange={handleInputChange}
                         />
                   </div>
                   <div className="mb-4 flex items-center  border-2  rounded-full mx-10">
@@ -64,7 +73,8 @@ function SignupForm() {
                       <input
                         className=" p-2 w-full rounded-full h-9 font-Ubuntu "
                         placeholder='Email'
-                        onChange={(event) => setEmail(event.target.value)}
+                        name='email'
+                        onChange={handleInputChange}
                       />
                   </div>
 
@@ -75,7 +85,8 @@ function SignupForm() {
                       <input
                         className="p-2 w-full rounded-full h-9 font-Ubuntu"
                         placeholder='Password'
-                        onChange={(event) => setPassword(event.target.value)}
+                        name='password'
+                        onChange={handleInputChange}
                       />
                       <HiEye className="h-5 w-5" />
                   </div> 
@@ -86,7 +97,8 @@ function SignupForm() {
                       <input
                         className="p-2 w-full rounded-full h-9 font-Ubuntu"
                         placeholder='Confirm Password'
-                        onChange={(event) => setCpassword(event.target.value)}
+                        name='password_confirmation'
+                        onChange={handleInputChange}
                       />
                       <HiEye className="h-5 w-5" />
                   </div> 
@@ -95,7 +107,7 @@ function SignupForm() {
 
                   <div className="sm-flex">
                       <div className="mx-10">
-                            <button className="bg-red-500 text-white px-4 py-2 w-full rounded-full hover:bg-white hover:shadow-xl  hover:text-red-700 focus:outline-none focus:shadow-outline-blue active:bg-red-800" type="submit" onClick={Register}>
+                            <button type='submit' className="bg-red-500 text-white px-4 py-2 w-full rounded-full hover:bg-white hover:shadow-xl  hover:text-red-700 focus:outline-none focus:shadow-outline-blue active:bg-red-800">
                               Sign up
                             </button>
                             </div>
@@ -122,7 +134,7 @@ function SignupForm() {
                     <h1 className="text-center text-gray-500 font-Ubuntu">Already have an account?</h1>
                     <div className="p-2 mx-10 mb-5">
                     <Link to="/login">
-                      <button className="text-red-400 font-Ubuntu  px-4 py-2 w-full rounded-full hover:bg-red-500 hover:text-white border-[1.5px] border-red-400" type="submit">
+                      <button className="text-red-400 font-Ubuntu  px-4 py-2 w-full rounded-full hover:bg-red-500 hover:text-white border-[1.5px] border-red-400" >
                      Sign in
                     </button>
                     </Link> 

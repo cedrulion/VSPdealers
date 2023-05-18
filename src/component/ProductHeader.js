@@ -5,18 +5,19 @@ import { FaSearch } from 'react-icons/fa';
 import {FaEuroSign} from "react-icons/fa"
 import {BsBagPlus,BsBookmark} from "react-icons/bs"
 
-import Nav from './Nav'
+import HomeNav from './HomeNav'
 import Footer from './Footer'
 
-const baseURL = 'http://localhost:3000/Products'
+const baseURL = 'http://shemaherbez-001-site1.atempurl.com/api/product/show'
 function ProductHeader() {
-const [products,setProducts] = useState(null);
+const [products,setProducts] = useState([]);
 const [selectedPriceRange, setSelectedPriceRange] = useState("");
 const [cartItems, setCartItems] = useState(() => {
         const retrievedArray = localStorage.getItem('cartItems');
         return retrievedArray ? JSON.parse(retrievedArray) : [];
       });
       const [searchTerm, setSearchTerm] = useState('');
+
 
 const addToCart = async(product) => {
         setCartItems(prevArray => [...prevArray, product]);
@@ -25,7 +26,7 @@ const addToCart = async(product) => {
 useEffect(()=>{
         axios.get(baseURL)
         .then((Response)=>{
-                setProducts(Response.data)
+                setProducts(Response.data.product_list)
         })
 },[])
 
@@ -35,7 +36,7 @@ useEffect(() => {
 
 const filteredProducts = products
 ? products.filter((product)=>
-product.Title.toLowerCase().includes(searchTerm.toLowerCase()) &&
+product.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
 (
   selectedPriceRange === "" ||
   (selectedPriceRange === "under20" && product.Price < 20000) ||
@@ -51,9 +52,9 @@ const handleSearch =(event) =>{
 
  if(!products) return null
   return (
-    <div className="">
-        <Nav/>
-   <div className="flex justify-center p-4">
+    <div className="min-h-screen">
+        <HomeNav/>
+   <div className="flex justify-center p-4 ">
   <div className="search-container rounded-full border border-gray-700 flex items-center justify-center w-1/2 px-4 py-2 mx-auto">
     <FaSearch className="text-gray-700 mr-2" />
     <input className="w-full text-gray-700 bg-transparent focus:outline-none" type="text" placeholder="Search by items, car or part number" value={searchTerm} onChange={handleSearch}/>
@@ -87,26 +88,27 @@ const handleSearch =(event) =>{
    
       </div>
   <div className='flex  justify-center'>
-  <button className='bg-red-700 font-Ubuntu hover:bg-gray-100 hover:text-[#C52F33] text-white rounded-full py-2 px-16 font-semibold'>Filter</button>
+  <button className='bg-red-700 font-Ubuntu hover:bg-gray-100 hover:text-[#C52F33] text-white rounded-full py-2 placeholder: px-16 font-semibold'>Filter</button>
       
      </div>
-     <section className='mt-12 border border-gray-200' >
-        <div className='mb-10'>
+     <section className='' >
+        <div className=''>
               
-                <div className='mt-6 grid grid-cols-3  rounded-lg w-auto  px-5 py-4  bg-gray-100'>
+                <div className='m-6 grid grid-cols-3 border-[1px] border-black  rounded-lg group bg-gray-100'>
+                       
                         {/* 1 Card */}
                         {filteredProducts.map((product)=>(
-                        <div className='pl-14 pb-5' key={product.Id}>
-                                <div className='shadow-lg  w-64 '> 
-                                       <div className='bg-white w-64 h-60 px-4'> 
+                        <div className='pl-14 pb-5 cursor-pointer group-hover:scale-[0.85] hover:!scale-100 duration-500 ' key={product.Id}>
+                                <div className='shadow-lg '> 
+                                       <div className='bg-white w-64 h-30 px-4'> 
                                                 <div className=' flex text-[#C52F33] space-x-2 justify-between items-center pt-3'>
-                                                <h1 className='font-bold font-Roboto'>{product.Title}</h1>
+                                                <h1 className='font-bold font-Roboto'>{product.name}</h1>
                                                 <div className=''>
                                                 <BsBookmark className=' text-2xl'/>
                                                 </div>
                                                 </div>
-                                                <div className='w-34 mx-8 pt-4'>
-                                                        <img src={product.Image} alt="belt"/>
+                                                <div className='h-32 w-32'>
+                                                        <img src={product.image} alt="belt"/>
                                                 </div>
                                         </div>
                                         <div className='bg-red-100 w-64 h-72'>
@@ -118,22 +120,28 @@ const handleSearch =(event) =>{
                                                 </div>
                                                 <div className='flex text-sm ml-3 font-Ubuntu'>
                                                         <p className='text-black opacity-[0.5]'>Type</p>
-                                                        <p className='font-semibold ml-2'>{product.Type}</p>
+                                                        <p className='font-semibold ml-2'>{product.type}</p>
+                                                </div>
+                                                <div className='flex text-sm ml-3 font-Ubuntu'>
+                                                        <p className='text-black opacity-[0.5]'>Quantity</p>
+                                                        <p className='font-semibold ml-2'>{product.quantity}</p>
                                                 </div>
                                                 <div className='ml-3 text-sm'>
                                                         <h1 className='font-Ubuntu text-black opacity-[0.5] py-3'>Description</h1>
-                                                        <p className='w-52 font-semibold'>{product.Description}</p>
+                                                        <p className='w-52 font-semibold'>{product.description}</p>
                                                 </div>
                                                 <div className='ml-10 mt-5'>
                                                         <button className='bg-[#C52F33] hover:bg-gray-100 hover:text-[#C52F33] font-Ubuntu text-white uppercase rounded-[16px] py-2 px-8 font-semibold'  onClick={() => addToCart(product)}>add to cart</button>
                                                 </div>
                                         </div>
+                                        
                                 </div>
                         </div>
                         ))}
+                        </div>
 
                         {/* Cards End Here */}
-                </div>
+             
         </div>
 
      </section>

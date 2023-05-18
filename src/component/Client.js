@@ -50,9 +50,9 @@ function Client() {
                                 </th>
                             </tr>
                         </thead>
-                        <tbody class="bg-white divide-y divide-gray-200 dark:divide-gray-700 dark:bg-white text-black ">
+                        <tbody class=" divide-y w-full divide-gray-200 dark:divide-gray-700 dark:bg-white text-black ">
                             <tr>
-                                <td class="px-4 py-4 text-sm font-medium   whitespace-nowrap">
+                                <td class="px-4 py-4 text-sm font-medium ">
                                     <div class="inline-flex items-center gap-x-3">
                                         <input type="checkbox" class="text-blue-500 border-gray-300 rounded dark:bg-gray-900 dark:ring-offset-gray-900 dark:border-gray-700"></input>
 

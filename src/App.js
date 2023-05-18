@@ -14,6 +14,7 @@ import Dashboard from './component/Dashboard';
 import AddProduct from './component/Addproduct';
 import Client from './component/Client';
 import OrderInfo from './component/OrderInfo';
+import Homepage from './component/Homepage'
 
 function App() {
 
@@ -22,6 +23,8 @@ function App() {
        <>     
        <Routes>
         <Route exact path="/" element={<Main/>}></Route>
+        <Route exact path="/Main" element={<Main/>}></Route>
+        <Route exact path="/Homepage" element={<Homepage/>}></Route>
         <Route exact path="/signup" element={<SignupForm/>}></Route>
         <Route exact path="/login" element={<SigninForm/>}></Route>
         <Route exact path="/product" element={<ProductHeader/>}></Route>
@@ -37,7 +40,7 @@ function App() {
         <Route exact path="/AdminNav" element={<AdminNav/>}> 
 
           
-         
+        <Route exact path="Dashboard" element={<Dashboard/>}/>
           <Route exact path="AddProduct" element={<AddProduct/>}/>
          
           <Route exact path="Client" element={<Client/>}/>

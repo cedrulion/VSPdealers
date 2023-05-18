@@ -1,5 +1,5 @@
 import React from 'react'
-import Nav from './Nav'
+import HomeNav from './HomeNav'
 import car from "../Assets/image 15.png"
 import john from '../Assets/Group 77.png'
 import sarah from '../Assets/Group 80.png'
@@ -10,7 +10,7 @@ import Footer from './Footer'
 export default function About() {
   return (
     <>
-    <Nav/>    
+    <HomeNav/>    
     <section>
         <div className='flex min-h-screen'>
             <div className='ml-28 mt-20'>

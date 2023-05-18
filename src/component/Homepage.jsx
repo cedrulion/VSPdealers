@@ -30,21 +30,21 @@ import Group64 from '../component/Group64.png'
 import Group85 from '../component/Group85.png'
 
 import {Link} from "react-router-dom"
-import Nav from './Nav'
+import HomeNav from './HomeNav'
 import Footer from './Footer'
 
-export default function Main() {
+export default function Homepage() {
   return (
     <>
     <div className='min-h-screen'>
-    <Nav/>
+    <HomeNav/>
     <main>
     <header>
             <div className="flex justify-between ">
                     <div className='ml-24 mt-24 w-1/2'>
                     <h1 className='text-[#444444] text-5xl w-96 font-Interi '>Your Partner for reliable Spare Parts</h1>
                     <p className='text-[#444444] text-lg font-Roboto font-bold pt-4 pb-4'>We take pride in our knowledge and expertise to deliver topnotch services</p>
-                    <Link to="/login"><button className='bg-red-700 rounded-xl px-14 shadow-lg text-white py-2 '> Join us</button></Link>
+                   
                     </div> 
                     <div className=' absolute ml-[750px] '>
                      <img src={man} alt="man"/>
@@ -275,17 +275,7 @@ export default function Main() {
         
                 
                 <div className=' w-full rounded-r-lg'>
-                       {/* <div className='pl-12 mt-8'>
-                        <img src={quote} alt="quote" className='h-7 w-12'/>
-                       </div>
-                        <p className='text-white text-xl font-semibold px-12 '>
-                        Firstly, I was impressed with the vast selection of spare parts available on your website. 
-                        I easily found the exact part I needed for my car.   
-                        </p>
-                        <div className='mt-5 text-white font-Ubuntu  pl-12 opacity-[0.5]'>
-                        <p className='text-white font-bold text-xl'>Jasper Nick</p>
-                        <p className='text-sm pt-2'>An ISUZU D‑Max 2002 Owner</p>
-                        </div> */}
+             
                          <Swiper
         pagination={{
           type: "fraction",

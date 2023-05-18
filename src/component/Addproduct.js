@@ -1,34 +1,36 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import AdminNav from './AdminNav';
-import Dashboard from './Dashboard';
+
 import ReadProduct from './ReadProduct';
 
-const baseURL = 'http://localhost:3000/Products'
 
 
 function AddProduct() {
-  const [Title, setTitle] = useState('');
-  const [Description, setDescription] = useState('');
-  const [Image, setImage] = useState('');
-  const [Type, setType] = useState('');
-  const [Price, setPrice] = useState('')
+  const [productData, setProductData] = useState({
+    name: '',
+    description: '',
+    price: '',
+    image: '',
+    type:'',
+    quantity:''
+   
+  });
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setProductData((prevState) => ({ ...prevState, [name]: value }));
+  };
 
-
-  const handleSubmit =  (event) => {
+  const handleSave = async (event) => {
     event.preventDefault();
- axios.post(`http://localhost:3000/Products`,{
-  Title,
-  Description,
-  Image,
-  Type,
-  Price
-
- }
-
-)
- 
-  }
+    try {
+      await axios.post(`http://shemaherbez-001-site1.atempurl.com/api/product/store`, productData);
+      console.log('Saved successful');
+      alert('Saved successful!');
+    } catch (error) {
+      console.error('Save failed', error);
+      alert('Save failed');
+    }
+  };
 
   return (
     <div className='w-full min-h-screen mb-6'>
@@ -38,50 +40,44 @@ function AddProduct() {
           <div className='border border-gray-300 rounded-full'>
         <h2 className="text-2xl font-bold text-center">Products</h2>
         </div>
-        <form>
-          <div className='gap-4 p-6'>
-            <div>
+        <form onSubmit={handleSave}>
+          <div className='gap-4 p-6 ml-12'>
+            <div >
          
-              <div className="mb-4">
+              <div className="mb-4 ">
                 <input
                   type="text"
+
                 
                   placeholder='Title'
+                  name='name'
                   className="form-control border border-gray-400 rounded-full px-3 py-2 w-1/2"
                   required
-                  onChange={(event) => setTitle(event.target.value)}
+                  onChange={handleInputChange}
                  
                   
                 />
               </div>
-              <div className="mb-4">
-                <input
-                  type="text"
-              
-                  placeholder='Type'
-                  className="form-control border border-gray-400 rounded-full px-3 py-2 w-1/2"
-                  required
-                 onChange={(event) => setType(event.target.value)}
-                 
-                />
-              </div>
+            
               <div className="mb-4 flex">
                 <div>
                 <input
                   type="number"
                  
                   placeholder='Price'
+                  name='price'
                   className="form-control border border-gray-400 rounded-full px-3 py-2 "
                   required
-                  onChange={(event) => setPrice( event.target.value)}
+                  onChange={handleInputChange}
                   
                 />
                 </div>
                   <div className="dropdown-container mx-4 w-full">
-        <select className='rounded-full py-2 px-3 '
+        <select className='rounded-full py-2 px-3 ' onChange={handleInputChange}
+        name='type'
     
   >
-            <option value="">Category</option>
+            <option value="" >Type</option>
           <option value="toyota">Whells</option>
           <option value="honda">Body Parts</option>
           <option value="nissan">Electromics</option>
@@ -97,10 +93,25 @@ function AddProduct() {
               
                 <input
                   type='text'
-                  placeholder='Image'
+                  placeholder='Quantity'
+                  name='quantity'
                   className="form-control border border-gray-400 rounded-full px-3 py-2 w-1/2"
                   required
-                 onChange={(event) => setImage(event.target.value)}
+                  onChange={handleInputChange}
+                 
+                />
+              </div>
+            </div>
+              <div>
+              <div className="mb-4">
+              
+                <input
+                  type='text'
+                  placeholder='Image'
+                  name='image'
+                  className="form-control border border-gray-400 rounded-full px-3 py-2 w-1/2"
+                  required
+                  onChange={handleInputChange}
                  
                 />
               </div>
@@ -109,20 +120,22 @@ function AddProduct() {
                 <textarea
               
                   placeholder='Description'
+                  name='description'
                   className="form-control border border-gray-400 rounded-full w-1/2 px-3 py-2 "
                   required
-                  onChange={(event) => setDescription( event.target.value)}
+                  onChange={handleInputChange}
                 
                 ></textarea>
               </div>
             </div>
           
           </div>
+          <div className="flex px-4 py-2 justify-center">
+        <button type="submit" className="bg-red-600 text-white py-2 px-4 rounded-full hover:bg-red-700 ">Add a new product</button>
+        </div>
          
         </form>
-        <div className="flex px-4 py-2 justify-center">
-        <button type="submit" className="bg-red-600 text-white py-2 px-4 rounded-full hover:bg-red-700 " onClick={handleSubmit} >Add a new product</button>
-        </div>
+        
       </div>
       
       </div>

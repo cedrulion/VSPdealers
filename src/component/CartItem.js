@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Nav from './Nav';
+import HomeNav from './HomeNav';
 import Footer from './Footer';
 
 function CartItems() {
@@ -19,7 +19,7 @@ function CartItems() {
   };
 
   const calculateTotal = () =>
-    items.reduce((total, item, i) => total + item.Price * quantities[i], 0);
+    items.reduce((total, item, i) => total + item.price * quantities[i], 0);
 
   const handleProceedToCheckout = () => {
     navigate('/OrderInfo',{state: {items, quantities,total:calculateTotal()}}); // Use the navigate function to go to the OrderInfo page
@@ -27,16 +27,21 @@ function CartItems() {
 
   return (
     <div>
-      <Nav />
-      <div className="min-h-screen">
+      <HomeNav />
+      <div className="min-h-screen m-9">
         <h1 className="p-2 m-2 text-lg font-ubuntu">Cart</h1>
         <div className="p-5">
           {items.map((item, index) => (
             <div className="flex justify-between items-center mb-4" key={index}>
+                
               <div>
-                <h2 className="font-medium">{item.Title}</h2>
-                <p>{item.Price}</p>
-                <p className="text-gray-600">{item.Description}</p>
+                
+    <img src={item.image} alt='product' className='max-h-24' /> {/* Adjust the max-height of the image */}
+  </div>
+  <div className='flex justify-between gap-6'>
+                <h2 className="font-medium">{item.title}</h2>
+                <p>{item.price}</p>
+                <p className="text-gray-600">{item.description}</p>
               </div>
               <div className="flex items-center">
                 <button
