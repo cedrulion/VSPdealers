@@ -5,3 +5,43 @@
 .active{
     @apply  hover:bg-gray-600 text-white ;
 }
+.bg-slideshow {
+    position: relative;
+    width: 100%; /* Adjust the width as needed */
+    height: 200%; /* Adjust the height as needed */
+  }
+  
+  .bg-slideshow::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://stimg.cardekho.com/images/carexteriorimages/630x420/Hyundai/Creta/7695/1651645683867/front-left-side-47.jpg'); /* Replace with your Hyundai car image URLs */
+    background-size: cover;
+    background-position: center;
+    animation: bg-slideshow-animation 10s infinite;
+    opacity: 1; /* Set initial opacity to 1 to keep the image always visible */
+  }
+  
+  @keyframes bg-slideshow-animation {
+    0% {
+      opacity: 1;
+    }
+    20% {
+      opacity: 1;
+    }
+    33.33% {
+      opacity: 1;
+      background-image: url('https://stimg.cardekho.com/images/carexteriorimages/630x420/Hyundai/Verna/8703/1679389180298/front-left-side-47.jpg'); /* Replace with your Hyundai car image URLs */
+    }
+    53.33% {
+      opacity: 1;
+      background-image: url('https://stimg.cardekho.com/images/carexteriorimages/630x420/Hyundai/Verna/8703/1679389180298/front-left-side-47.jpg');
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  .mySwiper .swiper-pagination {
+    bottom: 20px; /* Adjust the distance from the bottom as needed */
+  }

@@ -15,6 +15,7 @@ function AddProduct() {
     quantity:''
    
   });
+
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setProductData((prevState) => ({ ...prevState, [name]: value }));
@@ -33,13 +34,14 @@ function AddProduct() {
   };
 
   return (
-    <div className='w-full min-h-screen mb-6'>
+    <div className='w-full '>
       
       <div className="bg-gray-200 ">
         <div className='p-6'>
           <div className='border border-gray-300 rounded-full'>
         <h2 className="text-2xl font-bold text-center">Products</h2>
         </div>
+        <div className='flex '>
         <form onSubmit={handleSave}>
           <div className='gap-4 p-6 ml-12'>
             <div >
@@ -51,7 +53,7 @@ function AddProduct() {
                 
                   placeholder='Title'
                   name='name'
-                  className="form-control border border-gray-400 rounded-full px-3 py-2 w-1/2"
+                  className="form-control border border-gray-400 rounded-full px-3 py-2 "
                   required
                   onChange={handleInputChange}
                  
@@ -59,7 +61,7 @@ function AddProduct() {
                 />
               </div>
             
-              <div className="mb-4 flex">
+              <div className="mb-4">
                 <div>
                 <input
                   type="number"
@@ -72,7 +74,7 @@ function AddProduct() {
                   
                 />
                 </div>
-                  <div className="dropdown-container mx-4 w-full">
+                  <div className=" mb-4 ">
         <select className='rounded-full py-2 px-3 ' onChange={handleInputChange}
         name='type'
     
@@ -95,7 +97,7 @@ function AddProduct() {
                   type='text'
                   placeholder='Quantity'
                   name='quantity'
-                  className="form-control border border-gray-400 rounded-full px-3 py-2 w-1/2"
+                  className="form-control border border-gray-400 rounded-full px-3 py-2 "
                   required
                   onChange={handleInputChange}
                  
@@ -109,7 +111,7 @@ function AddProduct() {
                   type='text'
                   placeholder='Image'
                   name='image'
-                  className="form-control border border-gray-400 rounded-full px-3 py-2 w-1/2"
+                  className="form-control border border-gray-400 rounded-full px-3 py-2 "
                   required
                   onChange={handleInputChange}
                  
@@ -121,7 +123,7 @@ function AddProduct() {
               
                   placeholder='Description'
                   name='description'
-                  className="form-control border border-gray-400 rounded-full w-1/2 px-3 py-2 "
+                  className="form-control border border-gray-400 rounded-full  px-3 py-2 "
                   required
                   onChange={handleInputChange}
                 
@@ -135,11 +137,13 @@ function AddProduct() {
         </div>
          
         </form>
-        
+        <div> <ReadProduct/></div>
+        </div>
       </div>
       
       </div>
-      <ReadProduct className="py-2"/>
+    
+     
     </div>
   );
 }

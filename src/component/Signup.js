@@ -35,7 +35,7 @@ const SignupForm =() => {
 };
 
   return (
-    <div className="flex ">
+    <div className="flex  min-h-screen">
           <div className="pt-12 pl-3">
             <Link to="/"><FaCaretLeft className="text-red-600 text-4xl"/></Link> 
           </div>
@@ -47,12 +47,12 @@ const SignupForm =() => {
                 <div className="md:flex hidden ">
                 <img src={torus} alt="" className="w-36 absolute"/>
                 <div className="ml-32 mt-8">
-                <h1 className="text-center mx-2 text-xl font-Ubuntu font-semibold">Not yet a VSP Delears member?</h1>
+                <h1 className="text-center mx-2 text-xl font-Ubuntu font-semibold">Not yet a Hyundai VSP Delears member?</h1>
                 <h2 className="text-center text-sm font-Ubuntu font-light py-2 ">just a couple of clicked to get started</h2>
                 </div>
                 </div>
               </div>
-              <div className="rounded shadow-md w-full max-w-md mr-10 mt-8 pt-4 border-red-500 border">
+              <div className="rounded shadow-md w-full max-w-md mr-10 mt-8 pt-4 border-red-500 border mb-9">
                 <h1 className="text-2xl text-center font-Ubuntu font-medium text-black mb-6">Sign up</h1>
                 <form onSubmit={Register}>
                 <div className="mb-4 flex items-center border-2  rounded-full mx-10 ">
@@ -83,6 +83,7 @@ const SignupForm =() => {
                       <HiOutlineLockClosed />
                       </div>
                       <input
+                      type='password'
                         className="p-2 w-full rounded-full h-9 font-Ubuntu"
                         placeholder='Password'
                         name='password'
@@ -95,6 +96,7 @@ const SignupForm =() => {
                       <HiOutlineLockClosed/>
                       </div>
                       <input
+                      type='password'
                         className="p-2 w-full rounded-full h-9 font-Ubuntu"
                         placeholder='Confirm Password'
                         name='password_confirmation'

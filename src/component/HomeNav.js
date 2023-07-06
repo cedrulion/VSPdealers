@@ -7,6 +7,7 @@ import {AiOutlineUser} from "react-icons/ai"
 import { useState } from 'react'
 import CartItems from './CartItem'
 import { useNavigate } from 'react-router-dom';
+import Hyundai from "../Assets/Hyundai.png"
 
 export default function HomeNav() {
 
@@ -48,10 +49,14 @@ export default function HomeNav() {
     setNavList(!navList)
   }
   return (
-    <div className=''>
-    <div className='hidden sticky top-0 z-10  bg-gradient-to-l from-[#C52F334D] to-red-400  h-14  md:flex justify-between'>
+    <div className=' sticky top-0'>
+    <div className='hidden  bg-gradient-to-l from-[#C52F334D] to-red-500  h-14  md:flex justify-between'>
         <div className=''>
-        <ul className='capitalize md:flex text-[18px] space-x-28 ml-24 pt-3'>
+        
+        <ul className='capitalize md:flex text-[18px] space-x-28 ml-2 pt-3'>
+        <div className="">
+  <img src={Hyundai} alt="logo" className="h-9 " />
+</div>
             <li className='  px-6 rounded-lg font-Ubuntu '><NavLink to="/Homepage">home</NavLink></li>
             <li className=' px-6 rounded-lg font-Ubuntu '><NavLink to="/product">products</NavLink></li>
             <li className=' px-6 rounded-lg font-Ubuntu '><NavLink to='/about'>about us</NavLink></li>
@@ -66,7 +71,7 @@ export default function HomeNav() {
                <Link to='/cartitem'><li><BsCart3 className='text-[#606060]' />
                <span>{items.length}</span>
                </li></Link>
-               <span className=''>{User}</span> 
+               <span className='font-bold'>{User}</span> 
                <li>
                
                <button onClick={toggleDropdown}>{isOpen?<AiOutlineUser className='text-[#606060]' />:<AiOutlineUser className='text-[#606060]' />}</button>
@@ -120,7 +125,7 @@ export default function HomeNav() {
            Show Orders
           </a>
           <a
-            href="#"
+            href="/TrackingOrder"
             className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
           >
             Track your orders
@@ -180,14 +185,10 @@ export default function HomeNav() {
   </ul>
   </div>
 </div>
-
-          <div>
-          </div>
-          
-
-    </div>
-    
-      
+  <div>
+ </div>
+  </div>
+   
     </div>
   )
 }

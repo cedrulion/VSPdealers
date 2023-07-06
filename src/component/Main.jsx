@@ -14,7 +14,7 @@ import mechanics from "../Assets/Group (2).png"
 import belt from "../Assets/image 7.png"
 import belt2 from "../Assets/image 9.png"
 import belt3 from "../Assets/image 8.png"
-import man from "../Assets/Mask group.png"
+import People from "../Assets/People.png"
 import testimony from "../Assets/Rectangle 11.png"
 import quote from "../Assets/q.png"
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -47,7 +47,7 @@ export default function Main() {
                     <Link to="/login"><button className='bg-red-700 rounded-xl px-14 shadow-lg text-white py-2 '> Join us</button></Link>
                     </div> 
                     <div className=' absolute ml-[750px] '>
-                     <img src={man} alt="man"/>
+                     <img src={People} alt="man"/>
                     </div>   
             </div>
             <div className='absolute ml-20 md:ml-25 lg:ml-30 w-52 mt-20 '>
@@ -180,9 +180,7 @@ export default function Main() {
                                                         <p className='w-52 font-semibold'>Specially designed & precisely manufactured engine
                                                          parts to enhance the life mahindra empower engine and better fuel efficiency.</p>
                                                 </div>
-                                                <div className='ml-10 mt-5'>
-                                                        <button className='bg-[#C52F33] hover:bg-gray-100 hover:text-[#C52F33] font-Ubuntu text-white uppercase rounded-[16px] py-2 px-8 font-semibold'>add to cart</button>
-                                                </div>
+                                               
                                         </div>
                                 </div>
                         </div>
@@ -217,9 +215,7 @@ export default function Main() {
                                                         <p className='w-52 font-semibold'>Specially designed & precisely manufactured engine
                                                          parts to enhance the life mahindra empower engine and better fuel efficiency.</p>
                                                 </div>
-                                                <div className='ml-10 mt-5'>
-                                                        <button className='bg-[#C52F33] font-Ubuntu hover:bg-gray-100 hover:text-[#C52F33] text-white uppercase rounded-[16px] py-2 px-8 font-semibold'>add to cart</button>
-                                                </div>
+                                               
                                         </div>
                                 </div>
                         </div>
@@ -254,9 +250,7 @@ export default function Main() {
                                                         <p className='w-52 font-semibold'>Specially designed & precisely manufactured engine
                                                          parts to enhance the life mahindra empower engine and better fuel efficiency.</p>
                                                 </div>
-                                                <div className='ml-10 mt-5'>
-                                                        <button className='bg-[#C52F33] font-Ubuntu hover:bg-gray-100 hover:text-[#C52F33] text-white uppercase rounded-[16px] py-2 px-8 font-semibold'>add to cart</button>
-                                                </div>
+                                               
                                         </div>
                                 </div>
                         </div>
@@ -275,33 +269,23 @@ export default function Main() {
         
                 
                 <div className=' w-full rounded-r-lg'>
-                       {/* <div className='pl-12 mt-8'>
-                        <img src={quote} alt="quote" className='h-7 w-12'/>
-                       </div>
-                        <p className='text-white text-xl font-semibold px-12 '>
-                        Firstly, I was impressed with the vast selection of spare parts available on your website. 
-                        I easily found the exact part I needed for my car.   
-                        </p>
-                        <div className='mt-5 text-white font-Ubuntu  pl-12 opacity-[0.5]'>
-                        <p className='text-white font-bold text-xl'>Jasper Nick</p>
-                        <p className='text-sm pt-2'>An ISUZU D‑Max 2002 Owner</p>
-                        </div> */}
-                         <Swiper
-        pagination={{
-          type: "fraction",
-        }}
-        navigation={true}
-        modules={[Pagination, Navigation]}
-        className="mySwiper  cursor-pointer text-[#606060] hover:text-red-700"
-      >
-        <SwiperSlide className=''>
-          <img src={Group64} alt=""/>
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={Group85} alt=""/>
-        </SwiperSlide>
-        
-      </Swiper>
+            
+                          <Swiper
+  pagination={{
+    type: "bullets", // Change the pagination type to "bullets"
+    clickable: true, // Allow clicking on the bullets to navigate
+  }}
+  navigation={true}
+  modules={[Pagination, Navigation]}
+  className="mySwiper  cursor-pointer text-[#606060] hover:text-red-700"
+>
+  <SwiperSlide className=''>
+    <img src={Group64} alt=""/>
+  </SwiperSlide>
+  <SwiperSlide>
+    <img src={Group85} alt=""/>
+  </SwiperSlide>
+</Swiper>
 
                 </div>
         

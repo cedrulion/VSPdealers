@@ -14,7 +14,7 @@ import mechanics from "../Assets/Group (2).png"
 import belt from "../Assets/image 7.png"
 import belt2 from "../Assets/image 9.png"
 import belt3 from "../Assets/image 8.png"
-import man from "../Assets/Mask group.png"
+import People from "../Assets/People.png"
 import testimony from "../Assets/Rectangle 11.png"
 import quote from "../Assets/q.png"
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -36,29 +36,29 @@ import Footer from './Footer'
 export default function Homepage() {
   return (
     <>
-    <div className='min-h-screen'>
+    <div className=''>
     <HomeNav/>
     <main>
     <header>
-            <div className="flex justify-between ">
-                    <div className='ml-24 mt-24 w-1/2'>
-                    <h1 className='text-[#444444] text-5xl w-96 font-Interi '>Your Partner for reliable Spare Parts</h1>
-                    <p className='text-[#444444] text-lg font-Roboto font-bold pt-4 pb-4'>We take pride in our knowledge and expertise to deliver topnotch services</p>
-                   
-                    </div> 
-                    <div className=' absolute ml-[750px] '>
-                     <img src={man} alt="man"/>
-                    </div>   
-            </div>
-            <div className='absolute ml-20 md:ml-25 lg:ml-30 w-52 mt-20 '>
-                    <img src={ring} alt="well"/>
-            </div>
+    <div className="flex justify-between   relative bg-slideshow  min-h-screen bg-gray-300 ">
+   <div className="ml-24 mt-24 w-1/2">
+ <div class="relative  h-screen">
+  <div class="absolute mt-5  left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+    <h1 class="text-white text-5xl w-96 font-Interi">Your Partner for reliable Spare Parts</h1>
+    <p class="text-white text-lg font-Roboto font-bold pt-4">We take pride in our knowledge and expertise to deliver top-notch services</p>
+  </div>
+</div>
+  </div> 
+  
+</div>
+
+          
     </header>
     {/* Card start here */}
-    <div className=' hidden md:block fixed bg-[#C52F334D] w-14 h-14 rounded-full  shadow-lg  ml-[1200px] mt-32 cursor-pointer '>
+    <div className=' hidden md:block fixed bg-[#C52F334D] w-14 h-14 rounded-full  shadow-lg  ml-[1200px]  cursor-pointer '>
          <FaHeadset className='mx-5 my-5'/>
         </div>
-     <section className='mt-72 md:ml-24 ml-44 pb-5'>
+     <section className='mt-6 md:ml-24 ml-44 pb-5'>
         
         <div className='grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
                 {/* First Card */}
@@ -180,9 +180,7 @@ export default function Homepage() {
                                                         <p className='w-52 font-semibold'>Specially designed & precisely manufactured engine
                                                          parts to enhance the life mahindra empower engine and better fuel efficiency.</p>
                                                 </div>
-                                                <div className='ml-10 mt-5'>
-                                                        <button className='bg-[#C52F33] hover:bg-gray-100 hover:text-[#C52F33] font-Ubuntu text-white uppercase rounded-[16px] py-2 px-8 font-semibold'>add to cart</button>
-                                                </div>
+                                                
                                         </div>
                                 </div>
                         </div>
@@ -217,9 +215,7 @@ export default function Homepage() {
                                                         <p className='w-52 font-semibold'>Specially designed & precisely manufactured engine
                                                          parts to enhance the life mahindra empower engine and better fuel efficiency.</p>
                                                 </div>
-                                                <div className='ml-10 mt-5'>
-                                                        <button className='bg-[#C52F33] font-Ubuntu hover:bg-gray-100 hover:text-[#C52F33] text-white uppercase rounded-[16px] py-2 px-8 font-semibold'>add to cart</button>
-                                                </div>
+                                              
                                         </div>
                                 </div>
                         </div>
@@ -254,9 +250,7 @@ export default function Homepage() {
                                                         <p className='w-52 font-semibold'>Specially designed & precisely manufactured engine
                                                          parts to enhance the life mahindra empower engine and better fuel efficiency.</p>
                                                 </div>
-                                                <div className='ml-10 mt-5'>
-                                                        <button className='bg-[#C52F33] font-Ubuntu hover:bg-gray-100 hover:text-[#C52F33] text-white uppercase rounded-[16px] py-2 px-8 font-semibold'>add to cart</button>
-                                                </div>
+                                             
                                         </div>
                                 </div>
                         </div>
@@ -276,24 +270,24 @@ export default function Homepage() {
                 
                 <div className=' w-full rounded-r-lg'>
              
-                         <Swiper
-        pagination={{
-          type: "fraction",
-        }}
-        navigation={true}
-        modules={[Pagination, Navigation]}
-        className="mySwiper  cursor-pointer text-[#606060] hover:text-red-700"
-      >
-        <SwiperSlide className=''>
-          <img src={Group64} alt=""/>
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={Group85} alt=""/>
-        </SwiperSlide>
-        
-      </Swiper>
-
-                </div>
+                        
+                <Swiper
+  pagination={{
+    type: "bullets", // Change the pagination type to "bullets"
+    clickable: true, // Allow clicking on the bullets to navigate
+  }}
+  navigation={true}
+  modules={[Pagination, Navigation]}
+  className="mySwiper  cursor-pointer text-[#606060] hover:text-red-700"
+>
+  <SwiperSlide className=''>
+    <img src={Group64} alt=""/>
+  </SwiperSlide>
+  <SwiperSlide>
+    <img src={Group85} alt=""/>
+  </SwiperSlide>
+</Swiper>
+</div>
         
         </div>
        

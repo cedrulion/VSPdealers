@@ -15,6 +15,10 @@ import AddProduct from './component/Addproduct';
 import Client from './component/Client';
 import OrderInfo from './component/OrderInfo';
 import Homepage from './component/Homepage'
+import Pay from './component/Pay';
+import Setting from './component/Setting';
+import OrderPage from './component/OrderPage';
+import TrackingOrder from './component/TrackingOrder';
 
 function App() {
 
@@ -26,9 +30,11 @@ function App() {
         <Route exact path="/Main" element={<Main/>}></Route>
         <Route exact path="/Homepage" element={<Homepage/>}></Route>
         <Route exact path="/signup" element={<SignupForm/>}></Route>
+<Route exact path="/TrackingOrder" element={<TrackingOrder/>}></Route>
         <Route exact path="/login" element={<SigninForm/>}></Route>
         <Route exact path="/product" element={<ProductHeader/>}></Route>
         <Route exact path="/OrderInfo" element={<OrderInfo/>} ></Route>
+        <Route exact path="/Pay" element={<Pay/>} ></Route>
         <Route exact path="/about" element={<About/>}></Route>
         <Route exact path="/cartitem" element={<CartItem/>}></Route>
        
@@ -42,7 +48,8 @@ function App() {
           
         <Route exact path="Dashboard" element={<Dashboard/>}/>
           <Route exact path="AddProduct" element={<AddProduct/>}/>
-         
+          <Route exact path="OrderPage" element={<OrderPage/>}/>
+          <Route exact path="Setting" element={<Setting/>}/>
           <Route exact path="Client" element={<Client/>}/>
        
           </Route>

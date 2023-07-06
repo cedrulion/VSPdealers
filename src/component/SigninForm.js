@@ -41,19 +41,19 @@ function SigninForm() {
   
 
   return (
-    <div className="flex relative">
-      <div className="pt-12 pl-3">
+    <div className="flex min-h-screen">
+      <div className="">
        <Link to="/signup"><FaCaretLeft className="text-red-600 text-4xl"/></Link> 
       </div>
       <div className="w-full items-center flex justify-between mr-28">
-        <div className="p-8">
+        <div className="">
             <div className="md:flex hidden m-2 p-2 items-center"> 
             <img src={car} alt="" className="w-80"/>
             </div>
                 <div className="md:flex hidden ">
                 <img src={torus} alt="" className="w-36 absolute mt-28 ml-[450px]"/>
                 <div className="ml-32 mt-8">
-                <h1 className="text-center mx-2 text-xl font-Ubuntu font-semibold">Not yet a VSP Delears member?</h1>
+                <h1 className="text-center mx-2 text-xl font-Ubuntu font-semibold">Not yet a Hyundai VSP Delears member?</h1>
                 <h2 className="text-center text-sm font-Ubuntu font-light py-2 ">just a couple of clicked to get started</h2>
                 </div>
                 </div>
@@ -95,12 +95,7 @@ function SigninForm() {
         Login
       </button>
       {error && <div className='text-red-700 text-center my-4'>{error}</div>}
-      {/* <button
-        className="bg-red-200 text-white p-2 px-4 py-2 w-full rounded-full hover:bg-white hover:shadow-xl hover:text-red-700 focus:outline-none focus:shadow-outline-blue active:bg-red-800"
       
-      >
-        <Link to="/AdminNav/Dashboard">ADMIN</Link>
-      </button> */}
     </div>
     <div className="mb-2 mt-2">
       <hr className="w-16 absolute mt-[14px] ml-4 sm:w-24 sm:mt-[14px] sm:ml-28 border" />

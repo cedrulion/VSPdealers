@@ -22,7 +22,7 @@ export default function Nav() {
 
   return (
     <div className=''>
-    <div className='hidden sticky top-0 z-10  bg-gradient-to-l from-[#C52F334D] to-red-400  h-14  md:flex justify-between'>
+    <div className='hidden sticky top-0 z-10  bg-gradient-to-l from-[#C52F334D] to-red-500  h-14  md:flex justify-between'>
         <div className=''>
         <ul className='capitalize md:flex text-[18px] space-x-28 ml-24 pt-3'>
             <li className=' text-white px-6 rounded-lg font-Ubuntu active'><Link to="/">home</Link></li>
