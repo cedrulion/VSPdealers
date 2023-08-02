@@ -1,12 +1,11 @@
 import React from 'react'
 import HomeNav from './HomeNav'
 import car from "../Assets/image 15.png"
-import john from '../Assets/Group 77.png'
 import sarah from '../Assets/Group 80.png'
 import eclipse from '../Assets/Ellipse 32.png'
-import mike from '../Assets/Group 79.png'
+import map from '../Assets/map.png'
 import Footer from './Footer'
-
+import images from '../Assets/images.jpg'
 export default function About() {
   return (
     <>
@@ -16,7 +15,7 @@ export default function About() {
             <div className='ml-28 mt-20'>
                 <h1 className='font-Ubuntu font-bold text-3xl text-[#606060]'>About us</h1>
                 <div className='mt-12 w-72 ml-12 font-Ubuntu text-xl'>
-                    <p >At our company, we are dedicated to providing our customers with high-quality spare parts for their vehicles.</p>
+                    <p>Welcome to Hyundai Vehicle Spare Parts dealers – Your one-stop destination for genuine and high-quality spare parts for Hyundai vehicles. We take pride in providing reliable parts to keep your Hyundai running smoothly on the road. Trust us for authentic products and exceptional customer service </p>
                     <p className='pt-12'>Our team consists of experts in the industry who are passionate about helping our customers find the right parts for their vehicles.</p>
                 </div>
             </div> 
@@ -33,14 +32,15 @@ export default function About() {
         <div className='ml-24 mt-14'>
             <h1 className='font-Ubuntu font-bold text-3xl text-[#606060]'>Meet our team</h1>
             <div className='flex justify-between mt-14'>
-                <div className=''>
-                <img src={john} alt="john pic"/>
+                <div className='rounded-full bg-red-700'>
+                <img src={images} alt="john pic" className=''/>
                 </div>
                 <div className='font-Ubuntu mr-44 mt-12'>
-                    <h1 className='font-bold'>John</h1>
-                    <p className='w-96 pt-5'>With over 10 years of experience in the automotive industry, 
-                        John is our head mechanic and parts specialist. He has a wealth of knowledge about all types
-                         of vehicles and can help you find the right parts for your specific make and model.</p>
+                    <h1 className='font-bold'>CEO</h1>
+                    <h1 className='font-bold'>Olivier MUGABO Nizeyimana</h1>
+                    <p className='w-96 pt-5'> we strive to deliver exceptional products and services to our valued customers.
+                     As the CEO, I am humbled by the talent surrounding me, and together, we are committed to setting new standards and creating a better driving experience for you. Thank you for trusting us on this incredible journey.
+                     Drive with us towards a brighter tomorrow</p>
                 </div>
             </div>
         </div>
@@ -69,13 +69,11 @@ export default function About() {
         
         <div className='flex justify-between mt-14 ml-20'>
                 <div>
-                <img src={mike} alt="john pic"/>
+                <img src={map} alt="john pic"/>
                 </div>
                 <div className='font-Ubuntu mr-48 mt-24'>
-                    <h1 className='font-bold'>Mike</h1>
-                    <p className='w-96 pt-5'>Mike is our shipping and logistics expert. He ensures that all orders are processed and shipped in a timely manner,
-                     and that our customers receive their parts as quickly as possible.</p>
-                </div>
+                    <h1 className='font-bold text-5xl'>Location</h1>
+                   </div> 
             </div>
 
     </section>  

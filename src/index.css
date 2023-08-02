@@ -6,9 +6,10 @@
     @apply  hover:bg-gray-600 text-white ;
 }
 .bg-slideshow {
-    position: relative;
+  position: relative;
+  
     width: 100%; /* Adjust the width as needed */
-    height: 200%; /* Adjust the height as needed */
+    height: 100%; /* Adjust the height as needed */
   }
   
   .bg-slideshow::before {
@@ -45,3 +46,4 @@
   .mySwiper .swiper-pagination {
     bottom: 20px; /* Adjust the distance from the bottom as needed */
   }
+ 

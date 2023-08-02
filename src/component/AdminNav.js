@@ -1,3 +1,100 @@
+// import React, { useState } from 'react';
+// import { AiOutlineUser } from 'react-icons/ai';
+// import { FaSistrix, FaUserAlt, FaRegChartBar } from 'react-icons/fa';
+// import { Link, Outlet } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
+
+// import { AiOutlineSetting } from 'react-icons/ai'
+// import Hyundai from "../Assets/Hyundai.png"
+// import { BsBagFill, BsFilterLeft } from 'react-icons/bs';
+
+// function AdminNav() {
+//   const navigate = useNavigate();
+//   const [isOpen, setIsOpen] = useState(true);
+//   const [showAdminNav, setShowAdminNav] = useState(true);
+
+//   const toggleDropdown = () => {
+//     setIsOpen(!isOpen);
+//   };
+
+//   const toggleAdminNav = () => {
+//     setShowAdminNav(!showAdminNav);
+//   };
+
+//   const handleLogout = async () => {
+//     // ... (your existing logout code)
+//   };
+
+//   const menuItems = [
+//     {
+//       path: 'Dashboard',
+//       name: 'Dashboard',
+//       icon: <FaRegChartBar />,
+//     },
+//     {
+//       path: 'OrderPage',
+//       name: 'Orders',
+//       icon: <FaSistrix />,
+//     },
+//     {
+//       path: 'Client',
+//       name: 'Clients',
+//       icon: <FaUserAlt />,
+//     },
+//     {
+//       path: 'Addproduct',
+//       name: 'Products',
+//       icon: <BsBagFill />,
+//     },
+//     {
+//       path: 'Setting',
+//       name: 'Settings',
+//       icon: <AiOutlineSetting />,
+//     },
+//   ];
+
+//   return (
+//     <>
+//       {/* ... (your existing code) */}
+//       <div className="sticky top-0 font-medium bg-gray-200 flex justify-end">
+//         <ul className="flex">
+//           <li className="flex">
+//             <h1 className="text-2xl">Admin</h1>
+//             {/* Toggle AdminNav on small screens */}
+//             <button onClick={toggleAdminNav}>
+//               <BsFilterLeft className='text-[#606060] text-4xl  ml-8 cursor-pointer'/>
+//             </button>
+//           </li>
+//         </ul>
+//       </div>
+//       {/* Show or hide AdminNav based on showAdminNav state */}
+//       {showAdminNav && (
+//         <div className="min-h-screen hidden sm:flex">
+//           <div className="sidebar bg-black-white shadow-lg  bg-gradient-to-l from-[#eb767a4d] to-red-200 w-64">
+//             <img src={Hyundai} alt="logo" className="flex mx-auto py-2" />
+//             {menuItems.map((item, index) => (
+//               <Link
+//                 to={item.path}
+//                 key={index}
+//                 className="flex text-black hover:text-white hover:bg-black  py-4 px-4  items-center"
+//               >
+//                 <div className="flex mx-auto  items-center py-4 px-4 gap-2 text-2xl font-semibold tracking-wide w-64">
+//                   {item.icon}
+//                   {item.name}
+//                 </div>
+//               </Link>
+//             ))}
+//           </div>
+//           <main className="w-full">
+//             {/* ... (your existing code) */}
+//           </main>
+//         </div>
+//       )}
+//     </>
+//   );
+// }
+
+// export default AdminNav;
 import React, { useEffect } from 'react';
 import { AiOutlineUser } from 'react-icons/ai';
 import { FaSistrix, FaUserAlt, FaRegChartBar } from 'react-icons/fa';
@@ -61,7 +158,7 @@ function AdminNav() {
 
   return (
     <>
-      <div className="min-h-screen hidden sm:flex">
+      <div className="min-h-screen  sm:flex">
         <div className="sidebar bg-black-white shadow-lg  bg-gradient-to-l from-[#eb767a4d] to-red-200 w-64">
           <img src={Hyundai} alt="logo" className="flex mx-auto py-2" />
           {menuItems.map((item, index) => (

@@ -14,9 +14,8 @@ import mechanics from "../Assets/Group (2).png"
 import belt from "../Assets/image 7.png"
 import belt2 from "../Assets/image 9.png"
 import belt3 from "../Assets/image 8.png"
-import People from "../Assets/People.png"
-import testimony from "../Assets/Rectangle 11.png"
-import quote from "../Assets/q.png"
+import sparep from "../Assets/sparep.jpg"
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -36,18 +35,18 @@ import Footer from './Footer'
 export default function Main() {
   return (
     <>
-    <div className='min-h-screen'>
+    
     <Nav/>
-    <main>
+    <main className='h-screen'>
     <header>
-            <div className="flex justify-between ">
+            <div className="flex justify-between">
                     <div className='ml-24 mt-24 w-1/2'>
                     <h1 className='text-[#444444] text-5xl w-96 font-Interi '>Your Partner for reliable Spare Parts</h1>
                     <p className='text-[#444444] text-lg font-Roboto font-bold pt-4 pb-4'>We take pride in our knowledge and expertise to deliver topnotch services</p>
                     <Link to="/login"><button className='bg-red-700 rounded-xl px-14 shadow-lg text-white py-2 '> Join us</button></Link>
                     </div> 
                     <div className=' absolute ml-[750px] '>
-                     <img src={People} alt="man"/>
+                     <img src={sparep} alt="spare"/>
                     </div>   
             </div>
             <div className='absolute ml-20 md:ml-25 lg:ml-30 w-52 mt-20 '>
@@ -265,7 +264,7 @@ export default function Main() {
     <p>Feedback from our</p>   
     <p>customers</p>
 </div>
-        <div className=' w-1/2 h-[350px] rounded-xl mb-12  mx-auto pt-2 '>
+        <div className=' w-1/2 h-[350px] rounded-xl mx-auto pt-2 '>
         
                 
                 <div className=' w-full rounded-r-lg'>
@@ -293,9 +292,10 @@ export default function Main() {
        
       
      </section>
+     <Footer/>
     </main>
-    <Footer/>
-    </div>
+    
+    
     </>
   )
 }

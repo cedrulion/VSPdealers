@@ -5,7 +5,7 @@ import {BsCart3,BsHeart,BsFilterLeft} from "react-icons/bs"
 import ProductHeader from './ProductHeader'
 import {AiOutlineUser} from "react-icons/ai"
 import { useState } from 'react'
-import CartItems from './CartItem'
+
 import { useNavigate } from 'react-router-dom';
 import Hyundai from "../Assets/Hyundai.png"
 
@@ -24,7 +24,7 @@ export default function HomeNav() {
   },[items])
 
   const toggleDropdown = () => {
-    setIsOpen(!isOpen);
+    setIsOpen((prev) => !prev);
   };
   const handleLogout = async () => {
     try {
@@ -83,7 +83,7 @@ export default function HomeNav() {
            
         </div> 
         
-        <div className={!isOpen?'absolute right-0 mt-12 w-32 bg-white rounded-md shadow-lg z-10 ':'hidden'}>
+        <div className={!isOpen?'absolute right-0 mt-12 w-32 bg-white rounded-md shadow-lg z-20 ':'hidden'}>
           <a
             href="#"
             className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
@@ -168,9 +168,9 @@ export default function HomeNav() {
           </div>
           </div>
         
-          <div className={!navList ? 'block fixed left-0  h-full w-32 bg-red-700 shadow-xl z-50 text-2xl ':'hidden'}>
-  
-    <button onClick={toggleDropdown}>{isOpen?<AiOutlineUser className='text-[#201919] text-2xl ml-2' />:<AiOutlineUser className='text-[#201919] text-2xl ml-2'/>}</button>
+          <div className={!navList ? 'block fixed left-0  h-full w-32 bg-red-700 shadow-xl z-20 text-2xl ':'hidden'}>
+    
+    <button onClick={toggleDropdown}>{isOpen?<AiOutlineUser className='text-[#201919] text-2xl ml-2 z-20' />:<AiOutlineUser className='text-[#201919] text-2xl ml-2'/>}</button>
     <div className='mb-0'>
     <ul className='py-3'>
     <li className='mb-5 px-2 py-1 rounded-lg text-white font-medium text-center hover:bg-red-800'>
@@ -184,11 +184,12 @@ export default function HomeNav() {
     </li>
   </ul>
   </div>
+  </div>
 </div>
   <div>
  </div>
   </div>
    
-    </div>
+    
   )
 }

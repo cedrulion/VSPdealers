@@ -19,7 +19,7 @@ function CartItems() {
   };
 
   const calculateTotal = () =>
-    items.reduce((total, item, i) => total + item.price * quantities[i], 0);
+    items.reduce((total, item, i) => total + item.pricePerItem * quantities[i], 0);
 
   const handleProceedToCheckout = () => {
     navigate('/OrderInfo',{state: {items, quantities,total:calculateTotal()}}); // Use the navigate function to go to the OrderInfo page
@@ -34,13 +34,13 @@ function CartItems() {
           {items.map((item, index) => (
             <div className="flex justify-between items-center mb-4" key={index}>
                 
-              <div>
+              {/* <div>
                 
-    <img src={item.image} alt='product' className='max-h-24' /> {/* Adjust the max-height of the image */}
-  </div>
+    <img src={item.image} alt='product' className='max-h-24' /> Adjust the max-height of the image
+  </div> */}
   <div className='flex justify-between gap-6'>
-                <h2 className="font-medium">{item.title}</h2>
-                <p>{item.price}</p>
+                <h2 className="font-medium">{item.productName}</h2>
+                <p>{item.pricePerItem}</p>
                 <p className="text-gray-600">{item.description}</p>
               </div>
               <div className="flex items-center">

@@ -8,7 +8,7 @@ import giphy from "../Assets/giphy.gif"
 import HomeNav from './HomeNav';
 import Footer from './Footer';
 
-const baseURL = 'http://shemaherbez-001-site1.atempurl.com/api/product/show';
+const baseURL = 'https://vspdealers.onrender.com/api/v1/products';
 
 function ProductHeader() {
   const [products, setProducts] = useState([]);
@@ -22,14 +22,28 @@ function ProductHeader() {
 
   const addToCart = (product) => {
     setCartItems((prevArray) => [...prevArray, product]);
+    
   };
 
   useEffect(() => {
-    axios.get(baseURL).then((Response) => {
-      setProducts(Response.data.product_list);
-      setIsLoading(false);
-    });
+    fetchData();
   }, []);
+
+  const fetchData = async () => {
+    try {
+      const token = localStorage.getItem('Token');
+      const response = await axios.get('https://vspdealers.onrender.com/api/v1/products', {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+      const data = response.data?.data?.allProducts || [];
+      setProducts(data);
+      setIsLoading(false);
+    } catch (error) {
+      console.error('Error retrieving products:', error);
+    }
+  };
 
   useEffect(() => {
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
@@ -38,13 +52,13 @@ function ProductHeader() {
   const filteredProducts = products
     ? products.filter(
         (product) =>
-          product.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
+          product.productName.toLowerCase().includes(searchTerm.toLowerCase()) &&
           (selectedPriceRange === '' ||
             (selectedPriceRange === 'under20' && product.price < 20000) ||
             (selectedPriceRange === '25to30' &&
-              product.price >= 25000 &&
-              product.price <= 30000) ||
-            (selectedPriceRange === 'over30' && product.price > 30000))
+              product.pricePerItem >= 25000 &&
+              product.pricePerItem <= 30000) ||
+            (selectedPriceRange === 'over30' && product.pricePerItem > 30000))
       )
     : [];
 
@@ -111,17 +125,18 @@ function ProductHeader() {
             {filteredProducts.map((product) => (
               <div
                 className="pl-14 pb-5 cursor-pointer group-hover:scale-[0.85] hover:!scale-100 duration-500 "
-                key={product.Id}
+                key={product._id}
               >
                 <div className="shadow-lg">
                   <div className="bg-white w-64 h-24 px-4">
                     <div className="flex text-[#C52F33] space-x-2 justify-between items-center pt-3">
-                      <h1 className="font-bold font-Roboto">{product.name}</h1>
+                      <h1 className="font-bold font-Roboto">{product.ProductName}</h1>
+                      
                       <div>
                         <BsBookmark className="text-2xl" />
                       </div>
                       <div className="h-32 w-32">
-                        <img src={product.image} alt="belt" />
+                        <img src={product.productsImages} alt="belt" />
                       </div>
                     </div>
                   </div>
@@ -129,7 +144,7 @@ function ProductHeader() {
                     <div className="flex justify-between py-3">
                       <h1 className="font-bold text-xl ml-3 flex">
                         <FaEuroSign className="mt-1" />
-                        <span>{product.Price}</span>
+                        <span>{product.pricePerItem}</span>
                       </h1>
                       <div className="mr-4">
                         <BsBagPlus className="text-[#C52F33] text-2xl" />
@@ -137,11 +152,11 @@ function ProductHeader() {
                     </div>
                     <div className="text-xl ml-3 font-Ubuntu">
                       <p className="text-black opacity-[0.5]">Price</p>
-                      <p className="font-semibold">{product.price}</p>
+                      <p className="font-semibold">{product.pricePerItem}</p>
                     </div>
                     <div className="flex text-sm ml-3 font-Ubuntu">
                       <p className="text-black opacity-[0.5]">Type</p>
-                      <p className="font-semibold ml-2">{product.type}</p>
+                      <p className="font-semibold ml-2">{product.productType}</p>
                     </div>
                     <div className="flex text-sm ml-3 font-Ubuntu">
                       <p className="text-black opacity-[0.5]">Quantity</p>
