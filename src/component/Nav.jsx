@@ -6,6 +6,7 @@ import ProductHeader from './ProductHeader'
 import {AiOutlineUser} from "react-icons/ai"
 import { useState } from 'react'
 import CartItems from './CartItem'
+import Hyundai from "../Assets/Hyundai.png"
 
 export default function Nav() {
 
@@ -23,6 +24,8 @@ export default function Nav() {
   return (
     <div className=''>
     <div className='hidden sticky top-0 z-10  bg-gradient-to-l from-[#C52F334D] to-red-500  h-14  md:flex justify-between'>
+
+  <img src={Hyundai} alt="logo" className="h-14 " />
         <div className=''>
         <ul className='capitalize md:flex text-[18px] space-x-28 ml-24 pt-3'>
             <li className=' text-white px-6 rounded-lg font-Ubuntu active'><Link to="/">home</Link></li>
@@ -35,7 +38,7 @@ export default function Nav() {
         <div className=''>
             <ul className='flex pt-4 space-x-6'>
                <li><FaSistrix className='text-[#606060]'/></li>
-               <li><BsHeart className='text-[#606060]' /></li>   
+               
                <Link to='/cartitem'><li><BsCart3 className='text-[#606060]' /></li></Link>
                <li><button onClick={toggleDropdown}>{isOpen?<AiOutlineUser className='text-[#606060]' />:<AiOutlineUser className='text-[#606060]' />}</button></li>
                </ul>
@@ -107,7 +110,7 @@ export default function Nav() {
             d="M5 15l7-7 7 7"
           />
         </svg>
-       <Link to='/signup'>Sign Out</Link>
+    
       </a>
       </div> 
         

@@ -13,6 +13,7 @@ const baseURL = 'https://vspdealers.onrender.com/api/v1/products';
 function ProductHeader() {
   const [products, setProducts] = useState([]);
   const [selectedPriceRange, setSelectedPriceRange] = useState('');
+  const [selectedproductType, setSelectedproductType] = useState('');
   const [cartItems, setCartItems] = useState(() => {
     const retrievedArray = localStorage.getItem('cartItems');
     return retrievedArray ? JSON.parse(retrievedArray) : [];
@@ -50,17 +51,27 @@ function ProductHeader() {
   }, [cartItems]);
 
   const filteredProducts = products
-    ? products.filter(
-        (product) =>
-          product.productName.toLowerCase().includes(searchTerm.toLowerCase()) &&
-          (selectedPriceRange === '' ||
-            (selectedPriceRange === 'under20' && product.price < 20000) ||
-            (selectedPriceRange === '25to30' &&
-              product.pricePerItem >= 25000 &&
-              product.pricePerItem <= 30000) ||
-            (selectedPriceRange === 'over30' && product.pricePerItem > 30000))
-      )
-    : [];
+  ? products.filter((product) => {
+    const productType = product.productType.trim().toUpperCase();
+      return (
+        product.productName.toLowerCase().includes(searchTerm.toLowerCase()) &&
+        (selectedPriceRange === '' ||
+          (selectedPriceRange === 'under20' && product.price < 20000) ||
+          (selectedPriceRange === '25to30' &&
+            product.pricePerItem >= 25000 &&
+            product.pricePerItem <= 30000) ||
+          (selectedPriceRange === 'over30' && product.pricePerItem > 30000)) &&
+        (selectedproductType === '' ||
+          (selectedproductType === 'WHEELS' && productType === 'WHEELS') ||
+          (selectedproductType === 'BODY PARTS' && productType === 'BODY PARTS') ||
+          (selectedproductType === 'ELECTRONICS' && productType === 'ELECTRONICS') ||
+          (selectedproductType === 'INTERIOR' && productType === 'INTERIOPR') ||
+          (selectedproductType === 'LIGHTING' && productType === 'LIGHTING') ||
+          (selectedproductType === 'MECHANICS' && productType === 'MECHANICS'))
+      );
+    })
+  : [];
+
 
   const handleSearch = (event) => {
     setSearchTerm(event.target.value);
@@ -86,14 +97,16 @@ function ProductHeader() {
 
       <div className="flex p-4 justify-center font-Ubuntu">
         <div className="dropdown-container mx-4 ">
-          <select className="bg-orange-200 rounded-full py-2 px-3">
+          <select className="bg-orange-200 rounded-full py-2 px-3"
+          value={selectedproductType}
+          onChange={(e) => setSelectedproductType(e.target.value)}>
             <option value="">Category</option>
-            <option value="toyota">Whells</option>
-            <option value="honda">Body Parts</option>
-            <option value="nissan">Electromics</option>
-            <option value="nissan">Interior</option>
-            <option value="nissan">Lightning</option>
-            <option value="nissan">Mechanics</option>
+            <option value="WHEELS">Whells</option>
+            <option value="BODY PARTS">Body Parts</option>
+            <option value="ELECTRONICS">Electromics</option>
+            <option value="INTERIOR">Interior</option>
+            <option value="LIGHTING">Lightning</option>
+            <option value="MECHANICS">Mechanics</option>
           </select>
         </div>
 
@@ -140,20 +153,21 @@ function ProductHeader() {
                       </div>
                     </div>
                   </div>
-                  <div className="bg-red-100 w-64 h-72">
-                    <div className="flex justify-between py-3">
-                      <h1 className="font-bold text-xl ml-3 flex">
-                        <FaEuroSign className="mt-1" />
-                        <span>{product.pricePerItem}</span>
-                      </h1>
+                  <div className="bg-red-100 w-64 h-84">
+                    <div className="">
+                      
                       <div className="mr-4">
                         <BsBagPlus className="text-[#C52F33] text-2xl" />
                       </div>
                     </div>
-                    <div className="text-xl ml-3 font-Ubuntu">
-                      <p className="text-black opacity-[0.5]">Price</p>
-                      <p className="font-semibold">{product.pricePerItem}</p>
-                    </div>
+                    <div className="text-xl ml-3 font-Ubuntu ">
+                   
+                    <p className="text-black opacity-[0.5]">Price</p>
+                    <div className='flex justify-between py-3'>
+                    <p className="font-semibold">{product.pricePerItem}</p>
+                    <h1 className='text-2xl font-bold'>Rwf</h1>                
+                      </div>
+                     </div>
                     <div className="flex text-sm ml-3 font-Ubuntu">
                       <p className="text-black opacity-[0.5]">Type</p>
                       <p className="font-semibold ml-2">{product.productType}</p>
@@ -166,7 +180,7 @@ function ProductHeader() {
                       <h1 className="font-Ubuntu text-black opacity-[0.5] py-3">
                         Description
                       </h1>
-                      <p className="w-52 font-semibold">{product.description}</p>
+                      <p className="w-52 font-semibold">{product.descriptions}</p>
                     </div>
                     <div className="ml-10 mt-5">
                       <button

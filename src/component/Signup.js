@@ -318,7 +318,7 @@ const SignupForm = () => {
             </button>
           </div>
 
-          <div className="flex justify-between mb-2 p-2 mx-10">
+          <div className="mb-2 p-2 mx-auto">
             <div>
               <button
                 type="submit"
@@ -328,23 +328,13 @@ const SignupForm = () => {
               </button>
             </div>
             
-            <div className="flex justify-between mb-2 p-2">
-              <div>
-                <button
-                  className="px-12 py-2 w-full rounded-full border-[1.5px] border-red-400 font-Ubuntu"
-                  type="button"
-                >
-                  <FaGoogle className="inline-block mr-2 text-xl" />
-                  Continue with Google
-                </button>
-              </div>
-            </div>
+            
           </div>
 
-          <h1 className="text-center text-gray-500 font-Ubuntu">Already have an account?</h1>
+          <h1 className="text-center text-white font-Ubuntu">Already have an account?</h1>
           <div className="p-2 mx-10 mb-5">
             <Link to="/login">
-              <button className="text-red-400 font-Ubuntu px-4 py-2 w-full rounded-full hover:bg-red-500 hover:text-white border-[1.5px] border-red-400">
+              <button className="text-white font-Ubuntu bg-red-500 px-4 py-2 w-full rounded-full hover:bg-red-700 hover:text-white border-[1.5px] border-red-400">
                 Sign in
               </button>
             </Link>

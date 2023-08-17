@@ -41,7 +41,7 @@ export default function Main() {
     <header>
             <div className="flex justify-between">
                     <div className='ml-24 mt-24 w-1/2'>
-                    <h1 className='text-[#444444] text-5xl w-96 font-Interi '>Your Partner for reliable Spare Parts</h1>
+                    <h1 className='text-[#444444] text-5xl w-96 font-Interi '>Your Partner for reliable Spare Parts<em className='text-5xl'> HYUNDAI</em></h1>
                     <p className='text-[#444444] text-lg font-Roboto font-bold pt-4 pb-4'>We take pride in our knowledge and expertise to deliver topnotch services</p>
                     <Link to="/login"><button className='bg-red-700 rounded-xl px-14 shadow-lg text-white py-2 '> Join us</button></Link>
                     </div> 

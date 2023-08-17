@@ -34,10 +34,10 @@ function CartItems() {
           {items.map((item, index) => (
             <div className="flex justify-between items-center mb-4" key={index}>
                 
-              {/* <div>
+              <div>
                 
-    <img src={item.image} alt='product' className='max-h-24' /> Adjust the max-height of the image
-  </div> */}
+    <img src={item.productsImages} alt='product' className='max-h-24' /> Adjust the max-height of the image
+  </div> 
   <div className='flex justify-between gap-6'>
                 <h2 className="font-medium">{item.productName}</h2>
                 <p>{item.pricePerItem}</p>

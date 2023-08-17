@@ -34,7 +34,7 @@ export default function Homepage() {
         <header>
             <div className="flex justify-between ">
                     <div className='ml-24 mt-24 w-1/2'>
-                    <h1 className='text-[#444444] text-5xl w-96 font-Interi '>Your Partner for reliable Spare Parts</h1>
+                    <h1 className='text-[#444444] text-5xl w-96 font-Interi '>Your Partner for reliable Spare Parts<em className='text-5xl'> HYUNDAI</em></h1>
                     <p className='text-[#444444] text-lg font-Roboto font-bold pt-4 pb-4'>We take pride in our knowledge and expertise to deliver topnotch services</p>
                     
                     </div> 
@@ -48,7 +48,7 @@ export default function Homepage() {
           <div className='hidden md:block fixed bg-[#C52F334D] w-14 h-14 rounded-full  shadow-lg  ml-[1200px]  cursor-pointer '>
             <FaHeadset className='mx-5 my-5' />
           </div>
-          <section className='flex flex-col items-center mt-6'>
+          <section className='mt-72 flex flex-col items-center '>
 
             <div className='grid gap-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3'>
               {/* First Card */}
@@ -135,10 +135,10 @@ export default function Homepage() {
             </div>
           </section>
           {/* Products section */}
-     <section className='flex flex-col items-center' >
+     <section className='items-center' >
         <div className='ml-16 mb-10'>
                 <h1 className='font-Roboto font-semibold text-xl ml-4 pt-4'>Popular Products</h1>
-                <div className='mt-6  sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-[1px] border-black  rounded-lg w-full  px-1 py-2  bg-gray-100 group pr-2 '>
+                <div className='mt-6  grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-[1px] border-black  rounded-lg w-full  px-1 py-2  bg-gray-100 group pr-2 '>
                         {/* 1 card */}
                         <div className='sm: pl-2 lg:pl-12 cursor-pointer group-hover:scale-[0.85] hover:!scale-100 duration-500 '>
                                 <div className='shadow-lg  w-64 '> 

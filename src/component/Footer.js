@@ -27,19 +27,7 @@ function Footer() {
                </div>
                
            </div>
-   <div className="container mx-auto w-1/2 items-center flex  p-2">
-         
-           <ul className="text-sm text-white leading-loose sm:flex hidden">
-             <li className="mb-2 mx-2 font-Ubuntu"><a href="#">Contacts</a></li>
-             <li className="mb-2 mx-2 font-Ubuntu"><a href="#">TOS</a></li>
-             <li className="mb-2 mx-2 font-Ubuntu"><a href="#">Privacy Policy</a></li>
-             <li className="mb-2 mx-2 font-Ubuntu"><a href="#">Company information</a></li>
-             <li className="mb-2 mx-2 font-Ubuntu"><a href="#">Payment</a></li>
-             <li className="mb-2 mx-2 font-Ubuntu"><a href="#">Shipping</a></li>
-            
-           </ul>
-          
-         </div>
+   
            
          <h1 className='text-center font-Ubuntu'>&copy;{date.getFullYear()} Online car parts: Buy cheap auto parts and spare online</h1>
 

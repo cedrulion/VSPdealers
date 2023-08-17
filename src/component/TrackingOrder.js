@@ -64,7 +64,7 @@ function TrackingOrder() {
         <div className='flex  flex-col-3'>
           {orderData.map((order) => (
             <div key={order._id} className="bg-white shadow-lg rounded-lg p-6 mb-4">
-              <h3 className="text-lg font-semibold mb-2">Order ID: {order._id}</h3>
+              <h3 className="text-lg font-semibold mb-2">Order info</h3>
               <p>Status: {getStatusText(order.status)}</p>
               {getStatusIcon(order.status)} 
               <p>Amount: {order.amount} Rwf</p>
@@ -79,7 +79,7 @@ function TrackingOrder() {
                 <h4 className="font-semibold">Products</h4>
                 {order.products.map((product, index) => (
                   <div key={index} className="border-t border-gray-200 mt-2 pt-2">
-                    <p>Product ID: {product.productId ? product.productId._id : 'N/A'}</p>
+                   
                     <p>Product Name: {product.productId ?product.productId.productName :'N/A'}</p>
                     <p>Quantity: {product.quantity}</p>
                     <p>Price: {product.price} Rwf</p>

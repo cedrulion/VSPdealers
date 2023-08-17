@@ -26,25 +26,15 @@ export default function HomeNav() {
   const toggleDropdown = () => {
     setIsOpen((prev) => !prev);
   };
-  const handleLogout = async () => {
+  const handleLogout = () => {
     try {
-      await fetch('http://shemaherbez-001-site1.atempurl.com/api/tokens/logout', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-
-      localStorage.clear();
-
+      localStorage.removeItem('Token'); // Clear the token from local storage
       navigate('/Main');
     } catch (error) {
       console.error('Logout error:', error);
     }
-
-
- 
-  }
+  };
+  
   const handleClick =()=>{
     setNavList(!navList)
   }
@@ -67,7 +57,7 @@ export default function HomeNav() {
         <div className=''>
             <ul className='flex pt-4 space-x-6'>
                <li><FaSistrix className='text-[#606060]'/></li>
-               <li><BsHeart className='text-[#606060]' /></li>   
+                 
                <Link to='/cartitem'><li><BsCart3 className='text-[#606060]' />
                <span>{items.length}</span>
                </li></Link>

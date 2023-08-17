@@ -107,7 +107,7 @@ function SigninForm() {
               <HiEye />
             </button>
           </div>
-          <h1 className="text-right mb-2 mr-2 sm:mr-12">Forgot password</h1>
+          <h1 className="text-right font-bold mb-2 mr-2 sm:mr-12">Forgot password</h1>
           <div className="mx-2 sm:mx-10">
             <button
               className="bg-red-500 text-white px-4 py-2 w-full rounded-full hover:bg-white hover:shadow-xl hover:text-red-700 focus:outline-none focus:shadow-outline-blue active:bg-red-800"
@@ -123,18 +123,7 @@ function SigninForm() {
             {error && <div className="text-red-700 text-center my-4">{error}</div>}
           </div>
          
-          <div className="flex flex-col sm:flex-row justify-center mb-2 p-2 z-20">
-            <div className="mx-2 mb-3 sm:mb-0 sm:mx-5">
-              <button
-                className="px-6 py-2 w-full rounded-full border-[1.5px] border-red-400 font-Ubuntu"
-                type="button"
-              >
-                <FaGoogle className="h-5 w-5 inline-block mr-2 text-xl bg-red-600" />
-                Continue with Google
-              </button>
-            </div>
-          </div>
-          <h1 className="text-center capitalize">Haven't an account yet?</h1>
+          <h1 className="text-center capitalize font-bold">Haven't an account yet?</h1>
           <div className="p-2 mx-auto z-20">
             <Link to="/signup">
               <button

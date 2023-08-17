@@ -1,5 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { AiOutlineCloseCircle } from 'react-icons/ai';
+
+const Modal = ({ isOpen, closeModal, title, content }) => {
+  return (
+    <div className={`fixed inset-0 ${isOpen ? '' : 'hidden'}`}>
+      <div className="flex items-center justify-center h-screen">
+        <div className="bg-black bg-opacity-50 absolute inset-0" onClick={closeModal}></div>
+        <div className="bg-white p-6 rounded-lg shadow-md z-10 w-1/2">
+          <div className="flex justify-end">
+            <button onClick={closeModal}>
+              <AiOutlineCloseCircle className="text-3xl text-gray-600 hover:text-red-500" />
+            </button>
+          </div>
+          <h2 className="text-2xl font-bold mb-4">{title}</h2>
+          {content}
+        </div>
+      </div>
+    </div>
+  );
+};
+
 
 const AddProduct = () => {
   const [products, setProducts] = useState([]);
@@ -159,9 +180,22 @@ const AddProduct = () => {
     }
   };
 
-  const handleConfirmation = (action, productId) => {
+  const handleUpdateModal = (productId) => {
     setSelectedProduct(productId);
-    setActionConfirmation(action);
+    setActionConfirmation('update');
+  };
+
+  const handleDeleteModal = (productId) => {
+    setSelectedProduct(productId);
+    setActionConfirmation('delete');
+  };
+
+  const handleAddModal = () => {
+    setActionConfirmation('addImage');
+  };
+
+  const closeModal = () => {
+    setActionConfirmation('');
   };
 
   return (
@@ -176,29 +210,24 @@ const AddProduct = () => {
             <p>Type: {product.productType}</p>
             <p>Quantity: {product.quantity}</p>
             {product.productsImages && product.productsImages.length > 0 && (
-              <img src={product.productsImages[0]} alt={product.productName} />
+              <img src={product.productsImages[0]} alt={product.productName} className="h-32" />
             )}
+
             <button
               className="bg-red-500 text-white py-1 px-4 rounded-md mt-2 hover:bg-red-600"
-              onClick={() => getProduct(product._id)}
-            >
-              Get Product
-            </button>
-            <button
-              className="bg-red-500 text-white py-1 px-4 rounded-md mt-2 hover:bg-red-600"
-              onClick={() => handleConfirmation('update', product._id)}
+              onClick={() => handleUpdateModal(product._id)}
             >
               Update
             </button>
             <button
               className="bg-red-500 text-white py-1 px-4 rounded-md mt-2 ml-2 hover:bg-red-600"
-              onClick={() => handleConfirmation('delete', product._id)}
+              onClick={() => handleDeleteModal(product._id)}
             >
               Delete
             </button>
             <button
               className="bg-red-500 text-white py-1 px-4 rounded-md mt-2 ml-2 hover:bg-red-600"
-              onClick={() => handleConfirmation('addImage', product._id)}
+              onClick={handleAddModal}
             >
               Add Image
             </button>
@@ -206,166 +235,192 @@ const AddProduct = () => {
         ))}
       </div>
 
-      <div className="border p-4 mb-4">
-        {actionConfirmation === 'update' && (
-          <>
-            <h2 className="text-2xl font-bold mb-4">Update Product</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <input
-                  type="text"
-                  placeholder="Product Name"
-                  value={newProduct.productName}
-                  onChange={(e) => setNewProduct({ ...newProduct, productName: e.target.value })}
-                  className="border rounded-md px-2 py-1 w-full mb-2"
-                />
-                <input
-                  type="text"
-                  placeholder="Product Type"
-                  value={newProduct.productType}
-                  onChange={(e) => setNewProduct({ ...newProduct, productType: e.target.value })}
-                  className="border rounded-md px-2 py-1 w-full mb-2"
-                />
-                <input
-                  type="text"
-                  placeholder="Description"
-                  value={newProduct.descriptions}
-                  onChange={(e) => setNewProduct({ ...newProduct, descriptions: e.target.value })}
-                  className="border rounded-md px-2 py-1 w-full mb-2"
-                />
-                <input
-                  type="text"
-                  placeholder="Manufacturer"
-                  value={newProduct.manufacturer}
-                  onChange={(e) => setNewProduct({ ...newProduct, manufacturer: e.target.value })}
-                  className="border rounded-md px-2 py-1 w-full mb-2"
-                />
-                <input
-                  type="text"
-                  placeholder="Quantity"
-                  value={newProduct.quantity}
-                  onChange={(e) => setNewProduct({ ...newProduct, quantity: e.target.value })}
-                  className="border rounded-md px-2 py-1 w-full mb-2"
-                />
-                <input
-                  type="text"
-                  placeholder="Price Per Item"
-                  value={newProduct.pricePerItem}
-                  onChange={(e) => setNewProduct({ ...newProduct, pricePerItem: e.target.value })}
-                  className="border rounded-md px-2 py-1 w-full mb-2"
-                />
+      {/* Update Product Modal */}
+      {actionConfirmation === 'update' && (
+        <Modal
+          isOpen={true}
+          closeModal={closeModal}
+          title="Update Product"
+          content={
+            <>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <input
+                    type="text"
+                    placeholder="Product Name"
+                    value={newProduct.productName}
+                    onChange={(e) => setNewProduct({ ...newProduct, productName: e.target.value })}
+                    className="border rounded-md px-2 py-1 w-full mb-2"
+                  />
+                  <input
+                    type="text"
+                    placeholder="Product Type"
+                    value={newProduct.productType}
+                    onChange={(e) => setNewProduct({ ...newProduct, productType: e.target.value })}
+                    className="border rounded-md px-2 py-1 w-full mb-2"
+                  />
+                  <input
+                    type="text"
+                    placeholder="Description"
+                    value={newProduct.descriptions}
+                    onChange={(e) => setNewProduct({ ...newProduct, descriptions: e.target.value })}
+                    className="border rounded-md px-2 py-1 w-full mb-2"
+                  />
+                  <input
+                    type="text"
+                    placeholder="Manufacturer"
+                    value={newProduct.manufacturer}
+                    onChange={(e) => setNewProduct({ ...newProduct, manufacturer: e.target.value })}
+                    className="border rounded-md px-2 py-1 w-full mb-2"
+                  />
+                  <input
+                    type="text"
+                    placeholder="Quantity"
+                    value={newProduct.quantity}
+                    onChange={(e) => setNewProduct({ ...newProduct, quantity: e.target.value })}
+                    className="border rounded-md px-2 py-1 w-full mb-2"
+                  />
+                  <input
+                    type="text"
+                    placeholder="Price Per Item"
+                    value={newProduct.pricePerItem}
+                    onChange={(e) => setNewProduct({ ...newProduct, pricePerItem: e.target.value })}
+                    className="border rounded-md px-2 py-1 w-full mb-2"
+                  />
+                </div>
               </div>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <button
-                className="bg-red-500 text-white py-1 px-4 rounded-md mt-2 hover:bg-red-600"
-                onClick={updateProduct}
-              >
-                Update
-              </button>
-            </div>
-          </>
-        )}
-
-        {actionConfirmation === 'delete' && (
-          <>
-            <h2 className="text-2xl font-bold mb-4">Confirm Deletion</h2>
-            <p>Are you sure you want to delete this product?</p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <button
-                className="bg-red-500 text-white py-1 px-4 rounded-md mt-2 hover:bg-red-600"
-                onClick={deleteProduct}
-              >
-                Delete
-              </button>
-            </div>
-          </>
-        )}
-
-        {actionConfirmation === 'addImage' && (
-          <>
-            <h2 className="text-2xl font-bold mb-4">Add Product Image</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <input
-                  type="file"
-                  accept="image/*"
-                  onChange={handleImageChange}
-                  className="border rounded-md px-2 py-1 w-full mb-2"
-                />
+              <div className="flex flex-col sm:flex-row gap-4">
+                <button
+                  className="bg-red-500 text-white py-1 px-4 rounded-md mt-2 hover:bg-red-600"
+                  onClick={updateProduct}
+                >
+                  Update
+                </button>
               </div>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <button
-                className="bg-red-500 text-white py-1 px-4 rounded-md mt-2 hover:bg-red-600"
-                onClick={addProductImages}
-              >
-                Add Image
-              </button>
-            </div>
-          </>
-        )}
+            </>
+          }
+        />
+      )}
 
-        {actionConfirmation === '' && (
-          <>
-            <h2 className="text-2xl font-bold mb-4">Add New Product</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <input
-                  type="text"
-                  placeholder="Product Name"
-                  value={newProduct.productName}
-                  onChange={(e) => setNewProduct({ ...newProduct, productName: e.target.value })}
-                  className="border rounded-md px-2 py-1 w-full mb-2"
-                />
-                <input
-                  type="text"
-                  placeholder="Product Type"
-                  value={newProduct.productType}
-                  onChange={(e) => setNewProduct({ ...newProduct, productType: e.target.value })}
-                  className="border rounded-md px-2 py-1 w-full mb-2"
-                />
-                <input
-                  type="text"
-                  placeholder="Description"
-                  value={newProduct.descriptions}
-                  onChange={(e) => setNewProduct({ ...newProduct, descriptions: e.target.value })}
-                  className="border rounded-md px-2 py-1 w-full mb-2"
-                />
-                <input
-                  type="text"
-                  placeholder="Manufacturer"
-                  value={newProduct.manufacturer}
-                  onChange={(e) => setNewProduct({ ...newProduct, manufacturer: e.target.value })}
-                  className="border rounded-md px-2 py-1 w-full mb-2"
-                />
-                <input
-                  type="text"
-                  placeholder="Quantity"
-                  value={newProduct.quantity}
-                  onChange={(e) => setNewProduct({ ...newProduct, quantity: e.target.value })}
-                  className="border rounded-md px-2 py-1 w-full mb-2"
-                />
-                <input
-                  type="text"
-                  placeholder="Price Per Item"
-                  value={newProduct.pricePerItem}
-                  onChange={(e) => setNewProduct({ ...newProduct, pricePerItem: e.target.value })}
-                  className="border rounded-md px-2 py-1 w-full mb-2"
-                />
+      {/* Confirm Deletion Modal */}
+      {actionConfirmation === 'delete' && (
+        <Modal
+          isOpen={true}
+          closeModal={closeModal}
+          title="Confirm Deletion"
+          content={
+            <>
+              <p>Are you sure you want to delete this product?</p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <button
+                  className="bg-red-500 text-white py-1 px-4 rounded-md mt-2 hover:bg-red-600"
+                  onClick={deleteProduct}
+                >
+                  Delete
+                </button>
               </div>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <button
-                className="bg-red-500 text-white py-1 px-4 rounded-md mt-2 hover:bg-red-600"
-                onClick={addNewProduct}
-              >
-                Add Product
-              </button>
-            </div>
-          </>
-        )}
-      </div>
+            </>
+          }
+        />
+      )}
+
+      {/* Add Product Modal */}
+      {actionConfirmation === 'addImage' && (
+        <Modal
+          isOpen={true}
+          closeModal={closeModal}
+          title="Add Product Image"
+          content={
+            <>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <input
+                    type="file"
+                    accept="image/*"
+                    onChange={handleImageChange}
+                    className="border rounded-md px-2 py-1 w-full mb-2"
+                  />
+                </div>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <button
+                  className="bg-red-500 text-white py-1 px-4 rounded-md mt-2 hover:bg-red-600"
+                  onClick={addProductImages}
+                >
+                  Add Image
+                </button>
+              </div>
+            </>
+          }
+        />
+      )}
+
+      {/* Add New Product Modal */}
+      {actionConfirmation === '' && (
+        <Modal
+          isOpen={false}
+          closeModal={closeModal}
+          title="Add New Product"
+          content={
+            <>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <input
+                    type="text"
+                    placeholder="Product Name"
+                    value={newProduct.productName}
+                    onChange={(e) => setNewProduct({ ...newProduct, productName: e.target.value })}
+                    className="border rounded-md px-2 py-1 w-full mb-2"
+                  />
+                  <input
+                    type="text"
+                    placeholder="Product Type"
+                    value={newProduct.productType}
+                    onChange={(e) => setNewProduct({ ...newProduct, productType: e.target.value })}
+                    className="border rounded-md px-2 py-1 w-full mb-2"
+                  />
+                  <input
+                    type="text"
+                    placeholder="Description"
+                    value={newProduct.descriptions}
+                    onChange={(e) => setNewProduct({ ...newProduct, descriptions: e.target.value })}
+                    className="border rounded-md px-2 py-1 w-full mb-2"
+                  />
+                  <input
+                    type="text"
+                    placeholder="Manufacturer"
+                    value={newProduct.manufacturer}
+                    onChange={(e) => setNewProduct({ ...newProduct, manufacturer: e.target.value })}
+                    className="border rounded-md px-2 py-1 w-full mb-2"
+                  />
+                  <input
+                    type="text"
+                    placeholder="Quantity"
+                    value={newProduct.quantity}
+                    onChange={(e) => setNewProduct({ ...newProduct, quantity: e.target.value })}
+                    className="border rounded-md px-2 py-1 w-full mb-2"
+                  />
+                  <input
+                    type="text"
+                    placeholder="Price Per Item"
+                    value={newProduct.pricePerItem}
+                    onChange={(e) => setNewProduct({ ...newProduct, pricePerItem: e.target.value })}
+                    className="border rounded-md px-2 py-1 w-full mb-2"
+                  />
+                </div>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <button
+                  className="bg-red-500 text-white py-1 px-4 rounded-md mt-2 hover:bg-red-600"
+                  onClick={addNewProduct}
+                >
+                  Add Product
+                </button>
+              </div>
+            </>
+          }
+        />
+      )}
     </div>
   );
 };
