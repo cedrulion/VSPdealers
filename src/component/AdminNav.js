@@ -55,8 +55,8 @@ function AdminNav() {
 
   return (
     <>
-      <div className="min-h-screen  sm:flex">
-        <div className="sidebar bg-black-white shadow-lg  bg-gradient-to-l from-[#eb767a4d] to-red-200 w-64">
+      <div className="  sm:flex">
+        <div className="min-h-screen fixed sidebar bg-black-white shadow-lg  bg-gradient-to-l from-[#eb767a4d] to-red-200 w-64">
           <img src={Hyundai} alt="logo" className="flex mx-auto py-2" />
           {menuItems.map((item, index) => (
             <Link
@@ -71,12 +71,10 @@ function AdminNav() {
               </div>
             </Link>
           ))}
-        </div>
-        <main className="w-full">
-          <div className="sticky top-0 font-medium bg-gray-200 flex justify-end">
-            <ul className="flex">
+          <div className="mt-20 text-3xl font-bold">
+            <ul className="flex justify-center">
               <li className="flex">
-                <h1 className="text-2xl">Admin</h1>{' '}
+                <h1 className="text-2xl">LOG-OUT</h1>{' '}
                 <button onClick={toggleDropdown}>
                   {isOpen ? (
                     <AiOutlineUser className="text-[#606060]" />
@@ -105,7 +103,11 @@ function AdminNav() {
               Logout
             </a>
           </div>
-          <Outlet />
+        </div>
+        <main className="w-full">
+          
+          <div className='ml-64'><Outlet /></div>
+          
           
         </main>
       </div>

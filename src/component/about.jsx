@@ -11,27 +11,26 @@ export default function About() {
     <>
     <HomeNav/>    
     <section>
-        <div className='flex min-h-screen'>
+        <div className='flex gap-96'>
             <div className='ml-28 mt-20'>
                 <h1 className='font-Ubuntu font-bold text-3xl text-[#606060]'>About us</h1>
-                <div className='mt-12 w-72 ml-12 font-Ubuntu text-xl'>
+                <div className='mt-12 w-96 ml-12 font-Ubuntu text-xl'>
                     <p>Welcome to Hyundai Vehicle Spare Parts dealers – Your one-stop destination for genuine and high-quality spare parts for Hyundai vehicles. We take pride in providing reliable parts to keep your Hyundai running smoothly on the road. Trust us for authentic products and exceptional customer service </p>
                     <p className='pt-12'>Our team consists of experts in the industry who are passionate about helping our customers find the right parts for their vehicles.</p>
                 </div>
             </div> 
-            <div className='mt-6 ml-[300px] '>
+            <div className='mt-6 '>
                 <div className='absolute w-96 h-[500px] ml-5'> 
                 <img src={car} alt="car" className='w-full h-full object-cover'/>
                 </div>
-                <div className='bg-red-700 w-44 h-32  mt-[400px]'>
-                </div>
+                
             </div>  
         </div> 
 
         {/* john */}
         <div className='ml-24 mt-14'>
             <h1 className='font-Ubuntu font-bold text-3xl text-[#606060]'>Meet our team</h1>
-            <div className='flex justify-between mt-14'>
+            <div className='flex gap-96 mt-14'>
                 <div className='rounded-full bg-red-700'>
                 <img src={images} alt="john pic" className=''/>
                 </div>
@@ -47,7 +46,7 @@ export default function About() {
         {/* sarah  */}
 
         <div className='ml-24 '>
-            <div className='flex justify-between mt-14'>
+            <div className='flex gap-96 mt-14'>
             <div className='font-Ubuntu  mt-12'>
                     <h1 className='font-bold'>Sarah</h1>
                     <p className='w-96 pt-5'>Sarah is our customer service representative and is dedicated to ensuring our customers have the best experience possible.
@@ -67,11 +66,11 @@ export default function About() {
 
         {/* mike */}
         
-        <div className='flex justify-between mt-14 ml-20'>
+        <div className='flex gap-96 mt-14 ml-20'>
                 <div>
                 <img src={map} alt="john pic"/>
                 </div>
-                <div className='font-Ubuntu mr-48 mt-24'>
+                <div className='font-Ubuntu  mt-24'>
                     <h1 className='font-bold text-5xl'>Location</h1>
                    </div> 
             </div>

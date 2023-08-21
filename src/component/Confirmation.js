@@ -16,7 +16,7 @@ function Confirmation(props) {
           <ul className="list-disc list-inside mb-4">
             {items.map((item, index) => (
               <li key={index}>
-                {item.Title} - {quantities[index]} x ${item.Price} = ${item.Price * quantities[index]}
+                {item.productName} - {quantities[index]} x ${item.pricePerItem} = ${item.pricePerItem * quantities[index]}
               </li>
             ))}
           </ul>

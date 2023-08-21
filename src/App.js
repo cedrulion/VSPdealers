@@ -19,6 +19,7 @@ import Pay from './component/Pay';
 import Setting from './component/Setting';
 import OrderPage from './component/OrderPage';
 import TrackingOrder from './component/TrackingOrder';
+import Confirmation from './component/Confirmation';
 
 function App() {
 
@@ -37,7 +38,7 @@ function App() {
         <Route exact path="/Pay" element={<Pay/>} ></Route>
         <Route exact path="/about" element={<About/>}></Route>
         <Route exact path="/cartitem" element={<CartItem/>}></Route>
-       
+        <Route exact path="/Confirmation" element={<Confirmation/>}></Route>
       
        
       

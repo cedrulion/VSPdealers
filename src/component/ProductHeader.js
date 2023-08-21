@@ -8,7 +8,7 @@ import giphy from "../Assets/giphy.gif"
 import HomeNav from './HomeNav';
 import Footer from './Footer';
 
-const baseURL = 'https://vspdealers.onrender.com/api/v1/products';
+const baseURL = 'https://vspdealers-api.onrender.com/api/v1/products';
 
 function ProductHeader() {
   const [products, setProducts] = useState([]);
@@ -33,7 +33,7 @@ function ProductHeader() {
   const fetchData = async () => {
     try {
       const token = localStorage.getItem('Token');
-      const response = await axios.get('https://vspdealers.onrender.com/api/v1/products', {
+      const response = await axios.get('https://vspdealers-api.onrender.com/api/v1/products', {
         headers: {
           Authorization: `Bearer ${token}`
         }

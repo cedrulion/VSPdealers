@@ -13,7 +13,7 @@ function OrderPage() {
 
   const fetchOrders = async () => {
     try {
-      const response = await axios.get('https://vspdealers.onrender.com/api/v1/orders', {
+      const response = await axios.get('https://vspdealers-api.onrender.com/api/v1/orders', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -33,7 +33,7 @@ function OrderPage() {
   const handleStatusChange = async (orderId, newStatus) => {
     try {
       const response = await axios.patch(
-        `https://vspdealers.onrender.com/api/v1/orders/${orderId}/changeStatus`,
+        `https://vspdealers-api.onrender.com/api/v1/orders/${orderId}/changeStatus`,
         {
           status: newStatus,
         },

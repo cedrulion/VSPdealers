@@ -4,10 +4,13 @@ import HomeNav from './HomeNav';
 import Footer from './Footer';
 import { CheckCircle} from 'react-feather';
 import { CloseCircleOutlined } from '@ant-design/icons';
+import giphy from "../Assets/giphy.gif"
 
 function TrackingOrder() {
   const [orderData, setOrderData] = useState([]);
   const token = localStorage.getItem('Token');
+  const [isLoading, setIsLoading] = useState(true);
+
 
   useEffect(() => {
     fetchData();
@@ -16,7 +19,7 @@ function TrackingOrder() {
   const fetchData = async () => {
     try {
       // Fetch the order data from the endpoint
-      const response = await axios.get('https://vspdealers.onrender.com/api/v1/orders/myOrders', {
+      const response = await axios.get('https://vspdealers-api.onrender.com/api/v1/orders/myOrders', {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -24,6 +27,7 @@ function TrackingOrder() {
       // Access the myOrders array using the data variable
       const data = response.data?.data?.myOrders || [];
       setOrderData(data);
+      setIsLoading(false);
     } catch (error) {
       console.error('Error fetching order data:', error);
       // Handle errors, show error message, or any other error handling
@@ -59,8 +63,9 @@ function TrackingOrder() {
   return (
     <div>
       <HomeNav />
-      <div className="container mx-auto px-4">
+      <div className=" mx-auto px-4 min-h-screen">
         <h2 className="text-2xl font-semibold mb-4">Tracking Order</h2>
+        <div id="loading">{isLoading && <img src={giphy} className='flex mx-auto  rounded-lg group bg-gray-100"'/>}</div>
         <div className='flex  flex-col-3'>
           {orderData.map((order) => (
             <div key={order._id} className="bg-white shadow-lg rounded-lg p-6 mb-4">

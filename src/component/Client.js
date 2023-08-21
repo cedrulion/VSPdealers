@@ -14,7 +14,7 @@ function Client() {
   const fetchUsers = async () => {
     try {
       const token = localStorage.getItem('Token');
-      const response = await axios.get('https://vspdealers.onrender.com/api/v1/users/', {
+      const response = await axios.get('https://vspdealers-api.onrender.com/api/v1/users/', {
         headers: {
           'accept': 'application/json',
           'Authorization': `Bearer ${token}`,
@@ -30,7 +30,7 @@ function Client() {
   const deleteUser = async () => {
     try {
       const token = localStorage.getItem('Token');
-      await axios.delete(`https://vspdealers.onrender.com/api/v1/users/${selectedUser}/delete`, {
+      await axios.delete(`https://vspdealers-api.onrender.com/api/v1/users/${selectedUser}/delete`, {
         headers: {
           'accept': 'application/json',
           'Authorization': `Bearer ${token}`,

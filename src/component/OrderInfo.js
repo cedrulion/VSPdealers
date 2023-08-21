@@ -35,7 +35,7 @@ function OrderInfo(props) {
 
     const token = localStorage.getItem('Token');
 
-    axios.post('https://vspdealers.onrender.com/api/v1/orders/placeOrder', orderData, {
+    axios.post('https://vspdealers-api.onrender.com/api/v1/orders/placeOrder', orderData, {
       headers: {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${token}`

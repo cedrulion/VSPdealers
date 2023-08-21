@@ -44,7 +44,7 @@ const AddProduct = () => {
   const fetchData = async () => {
     try {
       const token = localStorage.getItem('Token');
-      const response = await axios.get('https://vspdealers.onrender.com/api/v1/products', {
+      const response = await axios.get('https://vspdealers-api.onrender.com/api/v1/products', {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -59,7 +59,7 @@ const AddProduct = () => {
   const addNewProduct = async () => {
     try {
       const token = localStorage.getItem('Token');
-      const response = await axios.post('https://vspdealers.onrender.com/api/v1/products/addNewProduct', newProduct, {
+      const response = await axios.post('https://vspdealers-api.onrender.com/api/v1/products/addNewProduct', newProduct, {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -87,7 +87,7 @@ const AddProduct = () => {
   const getProduct = async (productId) => {
     try {
       const token = localStorage.getItem('Token');
-      const response = await axios.get(`https://vspdealers.onrender.com/api/v1/products/${productId}`, {
+      const response = await axios.get(`https://vspdealers-api.onrender.com/api/v1/products/${productId}`, {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -102,7 +102,7 @@ const AddProduct = () => {
   const updateProduct = async () => {
     try {
       const token = localStorage.getItem('Token');
-      const response = await axios.patch(`https://vspdealers.onrender.com/api/v1/products/${selectedProduct}/update`, newProduct, {
+      const response = await axios.patch(`https://vspdealers-api.onrender.com/api/v1/products/${selectedProduct}/update`, newProduct, {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -130,7 +130,7 @@ const AddProduct = () => {
   const deleteProduct = async () => {
     try {
       const token = localStorage.getItem('Token');
-      await axios.delete(`https://vspdealers.onrender.com/api/v1/products/${selectedProduct}/delete`, {
+      await axios.delete(`https://vspdealers-api.onrender.com/api/v1/products/${selectedProduct}/delete`, {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -159,7 +159,7 @@ const AddProduct = () => {
 
       const token = localStorage.getItem('Token');
       const response = await axios.patch(
-        `https://vspdealers.onrender.com/api/v1/products/addProductImages/${selectedProduct}`,
+        `https://vspdealers-api.onrender.com/api/v1/products/addProductImages/${selectedProduct}`,
         formData,
         {
           headers: {
@@ -184,13 +184,19 @@ const AddProduct = () => {
     setSelectedProduct(productId);
     setActionConfirmation('update');
   };
+  const handleNewModal = () => {
+  
+    setActionConfirmation('new');
+  };
+
 
   const handleDeleteModal = (productId) => {
     setSelectedProduct(productId);
     setActionConfirmation('delete');
   };
 
-  const handleAddModal = () => {
+  const handleAddModal = (productId) => {
+    setSelectedProduct(productId);
     setActionConfirmation('addImage');
   };
 
@@ -201,6 +207,13 @@ const AddProduct = () => {
   return (
     <div className="container mx-auto py-8">
       <h2 className="text-2xl font-bold mb-4">Product List</h2>
+      <button
+  className="bg-green-500 text-white py-2 px-4 rounded-md mt-4 hover:bg-green-600"
+  onClick={() => handleNewModal()}
+>
+  Add New Product
+</button>
+
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         {products.map((product) => (
           <div key={product._id} className="border p-4 mb-4">
@@ -227,7 +240,7 @@ const AddProduct = () => {
             </button>
             <button
               className="bg-red-500 text-white py-1 px-4 rounded-md mt-2 ml-2 hover:bg-red-600"
-              onClick={handleAddModal}
+              onClick={() => handleAddModal(product._id)}
             >
               Add Image
             </button>
@@ -356,9 +369,9 @@ const AddProduct = () => {
       )}
 
       {/* Add New Product Modal */}
-      {actionConfirmation === '' && (
+      {actionConfirmation === 'new' && (
         <Modal
-          isOpen={false}
+          isOpen={true}
           closeModal={closeModal}
           title="Add New Product"
           content={

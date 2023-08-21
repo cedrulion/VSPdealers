@@ -48,11 +48,11 @@ export default function Homepage() {
           <div className='hidden md:block fixed bg-[#C52F334D] w-14 h-14 rounded-full  shadow-lg  ml-[1200px]  cursor-pointer '>
             <FaHeadset className='mx-5 my-5' />
           </div>
-          <section className='mt-72 flex flex-col items-center '>
+          <section className='mt-72 ml-32'>
 
-            <div className='grid gap-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3'>
+            <div className='grid gap-8 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3'>
               {/* First Card */}
-              <div className='border-black border-[1.5px] w-64 rounded-lg h-80 '>
+              <div className='border-black border-[1.5px] gap-4 w-64 rounded-lg h-80 '>
                 <div className='w-18 ml-20 mt-8'>
                   <img src={wheels} alt="wheels" />
                 </div>
