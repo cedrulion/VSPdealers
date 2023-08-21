@@ -132,7 +132,7 @@ function ProductHeader() {
 
       <section>
         <div>
-                 <div id="loading">{isLoading && <img src={giphy} className='flex mx-auto  rounded-lg group bg-gray-100"'/>}</div>
+                 <div id="loading">{isLoading && <img src={giphy} className='flex mx-auto min-h-screen rounded-lg group bg-gray-100"'/>}</div>
           <div className="m-6 grid grid-cols-3 border-[1px] rounded-lg group bg-gray-100">
          
             {filteredProducts.map((product) => (
@@ -143,12 +143,13 @@ function ProductHeader() {
                 <div className="shadow-lg">
                   <div className="bg-white w-64 h-24 px-4">
                     <div className="flex text-[#C52F33] space-x-2 justify-between items-center pt-3">
-                      <h1 className="font-bold font-Roboto">{product.ProductName}</h1>
+                      <h1 className="font-bold text-black font-Roboto">{product.productName}</h1>
                       
                       <div>
                         <BsBookmark className="text-2xl" />
                       </div>
                       <div className="h-32 w-32">
+                        
                         <img src={product.productsImages} alt="belt" />
                       </div>
                     </div>

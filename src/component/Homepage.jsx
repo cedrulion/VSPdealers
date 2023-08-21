@@ -135,12 +135,12 @@ export default function Homepage() {
             </div>
           </section>
           {/* Products section */}
-     <section className='items-center' >
+     <section className='mt-12' >
         <div className='ml-16 mb-10'>
                 <h1 className='font-Roboto font-semibold text-xl ml-4 pt-4'>Popular Products</h1>
-                <div className='mt-6  grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-[1px] border-black  rounded-lg w-full  px-1 py-2  bg-gray-100 group pr-2 '>
+                <div className='mt-6 grid grid-cols-3 border-[1px] border-black  rounded-lg w-full  px-1 py-2  bg-gray-100 group pr-2 '>
                         {/* 1 card */}
-                        <div className='sm: pl-2 lg:pl-12 cursor-pointer group-hover:scale-[0.85] hover:!scale-100 duration-500 '>
+                        <div className='pl-12 cursor-pointer group-hover:scale-[0.85] hover:!scale-100 duration-500 '>
                                 <div className='shadow-lg  w-64 '> 
                                        <div className='bg-white w-64 h-30 px-4'> 
                                                 <div className=' flex text-[#C52F33] space-x-2 justify-between items-center pt-3'>
@@ -169,13 +169,13 @@ export default function Homepage() {
                                                         <p className='w-52 font-semibold'>Specially designed & precisely manufactured engine
                                                          parts to enhance the life mahindra empower engine and better fuel efficiency.</p>
                                                 </div>
-                                                
+                                               
                                         </div>
                                 </div>
                         </div>
 
                         {/* card2 */}
-                        <div className='cursor-pointer group-hover:scale-[0.85] hover:!scale-100 duration-500'>
+                        <div className='pl-12 cursor-pointer group-hover:scale-[0.85] hover:!scale-100 duration-500'>
                                 <div className='shadow-lg  w-64 '> 
                                        <div className='bg-white w-64 h-60 px-4'> 
                                                 <div className=' flex text-[#C52F33] space-x-2 justify-between items-center pt-3'>
@@ -204,7 +204,7 @@ export default function Homepage() {
                                                         <p className='w-52 font-semibold'>Specially designed & precisely manufactured engine
                                                          parts to enhance the life mahindra empower engine and better fuel efficiency.</p>
                                                 </div>
-                                              
+                                               
                                         </div>
                                 </div>
                         </div>
@@ -239,7 +239,7 @@ export default function Homepage() {
                                                         <p className='w-52 font-semibold'>Specially designed & precisely manufactured engine
                                                          parts to enhance the life mahindra empower engine and better fuel efficiency.</p>
                                                 </div>
-                                             
+                                               
                                         </div>
                                 </div>
                         </div>
@@ -248,36 +248,39 @@ export default function Homepage() {
         </div>
 
      </section>
-          {/* Testimonies Section */}
-          <section className=''>
-            <div class='font-Ubuntu text-xl font-bold mx-auto text-center'>
-              <p>Feedback from our</p>
-              <p>customers</p>
-            </div>
-            <div className=' w-1/2 h-[350px] rounded-xl mb-12  mx-auto pt-2 '>
-              <div className='w-full rounded-r-lg'>
-                <Swiper
-                  pagination={{
-                    type: "bullets", // Change the pagination type to "bullets"
-                    clickable: true, // Allow clicking on the bullets to navigate
-                  }}
-                  navigation={true}
-                  modules={[Pagination, Navigation]}
-                  className="mySwiper  cursor-pointer text-[#606060] hover:text-red-700"
-                >
-                  <SwiperSlide className=''>
-                    <img src={Group64} alt="" />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <img src={Group85} alt="" />
-                  </SwiperSlide>
-                </Swiper>
-              </div>
+     {/* Testimonies Section */}
+     <section className=''>
+       <div class='font-Ubuntu text-xl font-bold mx-auto text-center'>
+    <p>Feedback from our</p>   
+    <p>customers</p>
+</div>
+        <div className=' w-1/2 h-[350px] rounded-xl mx-auto pt-2 '>
+        
+                
+                <div className=' w-full rounded-r-lg'>
+            
+                          <Swiper
+  pagination={{
+    type: "bullets", // Change the pagination type to "bullets"
+    clickable: true, // Allow clicking on the bullets to navigate
+  }}
+  navigation={true}
+  modules={[Pagination, Navigation]}
+  className="mySwiper  cursor-pointer text-[#606060] hover:text-red-700"
+>
+  <SwiperSlide className=''>
+    <img src={Group64} alt=""/>
+  </SwiperSlide>
+  <SwiperSlide>
+    <img src={Group85} alt=""/>
+  </SwiperSlide>
+</Swiper>
 
-            </div>
-
-
-          </section>
+                </div>
+        
+        </div>
+       
+     </section>
         </main>
         <Footer />
       </div>
