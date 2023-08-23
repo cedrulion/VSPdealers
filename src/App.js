@@ -20,6 +20,7 @@ import Setting from './component/Setting';
 import OrderPage from './component/OrderPage';
 import TrackingOrder from './component/TrackingOrder';
 import Confirmation from './component/Confirmation';
+import WishList from './component/WishList';
 
 function App() {
 
@@ -37,6 +38,7 @@ function App() {
         <Route exact path="/OrderInfo" element={<OrderInfo/>} ></Route>
         <Route exact path="/Pay" element={<Pay/>} ></Route>
         <Route exact path="/about" element={<About/>}></Route>
+        <Route exact path="/WishList" element={<WishList/>}></Route>
         <Route exact path="/cartitem" element={<CartItem/>}></Route>
         <Route exact path="/Confirmation" element={<Confirmation/>}></Route>
       

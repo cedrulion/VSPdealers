@@ -133,6 +133,11 @@ export default function HomeNav() {
         </svg>
        Logout
       </a>
+      <a
+            href="/WishList"
+            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+          > Wishlist
+          </a>
       </div> 
         
     </div>

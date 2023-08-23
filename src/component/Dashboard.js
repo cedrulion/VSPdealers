@@ -62,7 +62,38 @@ const Dashboard = () => {
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
   });
+  const calculateMostOrderedProduct = () => {
+    const productCountMap = {};
+  
+    orders.forEach(order => {
+      if (order.products && Array.isArray(order.products)) {
+        order.products.forEach(item => {
+          if (!item.productId) return; // Skip if the productId is missing
+          if (!productCountMap[item.productId.productName]) {
+            productCountMap[item.productId.productName] = item.quantity;
+          } else {
+            productCountMap[item.productId.productName] += item.quantity;
+          }
+        });
+      }
+    });
+  
+    let mostOrderedProduct = { productName: '', orderCount: 0 };
+  
+    for (const productName in productCountMap) {
+      if (productCountMap[productName] > mostOrderedProduct.orderCount) {
+        mostOrderedProduct = {
+          productName,
+          orderCount: productCountMap[productName]
+        };
+      }
+    }
+  
+    return mostOrderedProduct;
+  };
+  
 
+  const mostOrderedProduct = calculateMostOrderedProduct();
   return (
     <div> 
     <div className="mt-8">
@@ -96,6 +127,11 @@ const Dashboard = () => {
           <h2 className="text-xl font-semibold mb-2">Users</h2>
           <p className="text-3xl font-bold">{users.length}</p>
         </div>
+         <div className="p-4 bg-purple-200 rounded shadow">
+        <h2 className="text-xl font-semibold mb-2">Most Ordered Product</h2>
+        <p className="text-lg font-semibold">{mostOrderedProduct.productName}</p>
+        <p className="text-sm text-gray-600">{`${mostOrderedProduct.orderCount} times ordered`}</p>
+      </div>
       </div>
 
       <div className="mt-8">
