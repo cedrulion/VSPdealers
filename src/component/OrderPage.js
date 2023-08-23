@@ -70,50 +70,55 @@ function OrderPage() {
 
   return (
     <div>
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 mt-6 bg-gray-200">
         <h2 className="text-2xl font-semibold mb-4">All Orders</h2>
         <table className="min-w-full border-collapse table-auto">
-          <thead>
-            <tr>
-              <th className="border py-2 px-3 text-left">Order ID</th>
-              <th className="border py-2 px-3 text-left">User</th>
-              <th className="border py-2 px-3 text-left">Status</th>
-              <th className="border py-2 px-3 text-left">Amount</th>
-              <th className="border py-2 px-3 text-left">Placed At</th>
-              <th className="border py-2 px-3 text-left">Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {currentOrders.map((order) => (
-              <tr key={order._id}>
-                <td className="border py-2 px-3">{order._id}</td>
-                <td className="border py-2 px-3">
-                  {order.userId ? `${order.userId.firstName} ${order.userId.lastName}` : 'Guest'}
-                </td>
-                <td className="border py-2 px-3">{order.status}</td>
-                <td className="border py-2 px-3">{order.amount} Rwf</td>
-                <td className="border py-2 px-3">{new Date(Number(order.placedAt)).toLocaleString()}</td>
-                <td className="border py-2 px-3">
-                  {order.status === 'pending' ? (
-                    <button
-                      onClick={() => handleStatusChange(order._id, 'Delivered')}
-                      className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
-                    >
-                      Mark as Delivered
-                    </button>
-                  ) : order.status === 'Delivered' ? (
-                    <button
-                      onClick={() => handleStatusChange(order._id, 'Shipped')}
-                      className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                    >
-                      Mark as Shipped
-                    </button>
-                  ) : null}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+  <thead>
+    <tr>
+      <th className="border py-2 px-3 text-left">Order ID</th>
+      <th className="border py-2 px-3 text-left">User</th>
+      <th className="border py-2 px-3 text-left">Status</th>
+      <th className="border py-2 px-3 text-left">Amount</th>
+      <th className="border py-2 px-3 text-left">Placed At</th>
+      <th className="border py-2 px-3 text-left">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {currentOrders.map((order, index) => (
+      <tr key={order._id} className={index % 2 === 0 ? 'bg-gray-100' : 'bg-white'}>
+        <td className="border-t py-2 px-3">{order._id}</td>
+        <td className="border-t py-2 px-3">
+          {order.userId ? `${order.userId.firstName} ${order.userId.lastName}` : 'Guest'}
+        </td>
+        <td className="border-t py-2 px-3">{order.status}</td>
+        <td className="border-t py-2 px-3">{order.amount} Rwf</td>
+        <td className="border-t py-2 px-3">{new Date(Number(order.placedAt)).toLocaleString()}</td>
+        <td className="border-t py-2 px-3">
+          {order.status === 'pending' ? (
+            <button
+              onClick={() => handleStatusChange(order._id, 'Delivered')}
+              className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+            >
+              Mark as Delivered
+            </button>
+          ) : order.status === 'Delivered' ? (
+            <button
+              onClick={() => handleStatusChange(order._id, 'Shipped')}
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            >
+              Mark as Shipped
+            </button>
+          ) : order.status === 'Shipped' ? (
+            <button className='bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded'>
+              Completed
+            </button>
+          ) : null}
+        </td>
+      </tr>
+    ))}
+  </tbody>
+</table>
+
         <div className="flex justify-center mt-4">
           <button
             onClick={handlePrevPage}

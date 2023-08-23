@@ -56,8 +56,7 @@ export default function HomeNav() {
         </div>
         <div className=''>
             <ul className='flex pt-4 space-x-6'>
-               <li><FaSistrix className='text-[#606060]'/></li>
-                 
+               
                <Link to='/cartitem'><li><BsCart3 className='text-[#606060]' />
                <span>{items.length}</span>
                </li></Link>
@@ -68,7 +67,6 @@ export default function HomeNav() {
            
                </li>
              
-              
                </ul>
            
         </div> 
@@ -94,30 +92,24 @@ export default function HomeNav() {
             </svg>
             Profile
           </a>
-          <a
-            href="/OrderInfo"
-            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6 mr-2"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2m-4 0V3a1 1 0 00-1-1 3 3 0 00-3 3v2m8 0V3a1 1 0 011-1 3 3 0 013 3v2"
-              />
-            </svg>
-           Show Orders
-          </a>
+         
           <a
             href="/TrackingOrder"
             className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-          >
+          >  <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-6 w-6 mr-2"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2m-4 0V3a1 1 0 00-1-1 3 3 0 00-3 3v2m8 0V3a1 1 0 011-1 3 3 0 013 3v2"
+          />
+        </svg>
             Track your orders
             </a>
           <a

@@ -73,19 +73,19 @@ function AdminNav() {
           ))}
           <div className="mt-20 text-3xl font-bold">
             <ul className="flex justify-center">
-              <li className="flex">
-                <h1 className="text-2xl">LOG-OUT</h1>{' '}
+              <li className="">
+                <h1 className="text-2xl ">LOG-OUT</h1>{' '}
                 <button onClick={toggleDropdown}>
                   {isOpen ? (
-                    <AiOutlineUser className="text-[#606060]" />
+                    <AiOutlineUser className="text-[#606060] mt-5 text-5xl" />
                   ) : (
-                    <AiOutlineUser className="text-[#606060]" />
+                    <AiOutlineUser className="text-[#606060] mt-5 text-5xl" />
                   )}
                 </button>
               </li>
             </ul>
           </div>
-          <div className={!isOpen ? 'absolute right-0 mt-12 w-32 bg-white rounded-md shadow-lg z-10 ' : 'hidden'}>
+          <div className={!isOpen ? 'absolute right-0  w-32 bg-white rounded-md shadow-lg z-10 ' : 'hidden'}>
             <a
               href="#"
               className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"

@@ -52,7 +52,7 @@ function OrderInfo(props) {
   };
 
   const handleEdit = () => {
-    navigate('/EditOrder');
+    navigate('/cartitem');
   };
 
   const handleInputChange = (event) => {
@@ -66,9 +66,9 @@ function OrderInfo(props) {
   return (
     <div classname="">
       <HomeNav />
-      <div className='min-h-screen '>
-      <div className="flex mt-9 text-2xl justify-center gap-20">
-        <div className="w-96 p-8 bg-white rounded-lg shadow-lg">
+      <div className='min-h-screen bg-slate-50'>
+      <div className="flex  text-2xl justify-center gap-20">
+        <div className="w-96 mt-9 p-8 bg-gray-200 rounded-lg shadow-lg">
           <h2 className="font-medium">Order Summary</h2>
           <div className="py-5">
             <h1 className="text-red-500">List of items</h1>
@@ -93,7 +93,7 @@ function OrderInfo(props) {
             
           </div>
         </div>
-        <div className="mt-6">
+        <div className="mt-12">
                 <h2 className="font-medium">Shipping Address</h2>
                 <div className="flex flex-col mt-4">
                   <label htmlFor="province" className="font-medium mb-2">
@@ -102,6 +102,7 @@ function OrderInfo(props) {
                   <input
                     type="text"
                     id="province"
+                    placeholder='enter a province'
                     name="province"
                     value={shippingAddress.province}
                     onChange={handleInputChange}
@@ -115,6 +116,7 @@ function OrderInfo(props) {
                   <input
                     type="text"
                     id="district"
+                    placeholder='enter a district'
                     name="district"
                     value={shippingAddress.district}
                     onChange={handleInputChange}
@@ -128,6 +130,7 @@ function OrderInfo(props) {
                   <input
                     type="text"
                     id="sector"
+                    placeholder='enter a sector'
                     name="sector"
                     value={shippingAddress.sector}
                     onChange={handleInputChange}
@@ -137,10 +140,11 @@ function OrderInfo(props) {
                 
               
               <button
-                className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-2 rounded-full items-center ml-4"
+                className="mt-3 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-2 rounded-full items-center ml-4"
                 onClick={handleOrder}
               >
-                <FiCheck className="mr-2" /> Confirm and place order
+                <FiCheck className="flex mx-auto" /> 
+                <h1>Confirm and place order</h1>
               </button>
              
               </div>

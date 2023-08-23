@@ -107,7 +107,7 @@ function SigninForm() {
               <HiEye />
             </button>
           </div>
-          <h1 className="text-right font-bold mb-2 mr-2 sm:mr-12">Forgot password</h1>
+         
           <div className="mx-2 sm:mx-10">
             <button
               className="bg-red-500 text-white px-4 py-2 w-full rounded-full hover:bg-white hover:shadow-xl hover:text-red-700 focus:outline-none focus:shadow-outline-blue active:bg-red-800"

@@ -37,7 +37,7 @@ export default function Nav() {
         </div>
         <div className=''>
             <ul className='flex pt-4 space-x-6'>
-               <li><FaSistrix className='text-[#606060]'/></li>
+              
                
                <Link to='/cartitem'><li><BsCart3 className='text-[#606060]' /></li></Link>
                <li><button onClick={toggleDropdown}>{isOpen?<AiOutlineUser className='text-[#606060]' />:<AiOutlineUser className='text-[#606060]' />}</button></li>

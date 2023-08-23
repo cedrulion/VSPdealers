@@ -88,7 +88,7 @@ function ProductHeader() {
           <input
             className="w-full text-gray-700 bg-transparent focus:outline-none"
             type="text"
-            placeholder="Search by items, car or part number"
+            placeholder="Search for spare part"
             value={searchTerm}
             onChange={handleSearch}
           />

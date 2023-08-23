@@ -57,9 +57,10 @@ function Client() {
 
   return (
     <div className="container mx-auto py-8">
-      <h2 className="text-2xl font-bold mb-4">Users List</h2>
+      <h2 className="text-3xl font-bold mb-4 flex mx-auto">Users List</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {users.map((user) => (
+          user.email !== 'admin.user@gmail.com' && (
           <div key={user._id} className="bg-white p-4 rounded-lg shadow-md">
             <div className="flex items-center mb-2">
               <FaUser className="text-2xl mr-2" />
@@ -82,6 +83,7 @@ function Client() {
               </button>
             </div>
           </div>
+          )
         ))}
       </div>
 

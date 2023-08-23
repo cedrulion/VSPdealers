@@ -103,7 +103,7 @@ const SignupForm = () => {
                     <option value="female">Female</option>
                         </select>
                   </div>
-                  <div className="mb-4 flex items-center  border-2  rounded-full mx-10">
+                  <div className="mb-4 flex items-center  border-2  bg-black rounded-full mx-10">
                       <div className="pl-3 text-xl">
                       <HiOutlineMail />
                       </div>
