@@ -96,7 +96,7 @@ const Dashboard = () => {
   const mostOrderedProduct = calculateMostOrderedProduct();
   return (
     <div> 
-    <div className="mt-8">
+    {/* <div className="mt-8">
     <button
       className="bg-red-300 text-white px-4 py-2 rounded"
       onClick={handlePrint}
@@ -104,7 +104,7 @@ const Dashboard = () => {
        <AiOutlineDownload className="mx-auto text-3xl" />
       Download PDF
     </button>
-  </div>
+  </div> */}
     <div className="container mx-auto p-4"  ref={componentRef}>
       <h1 className="text-2xl font-bold mb-4 text-blue-600">HYUNDAI VEHICLE SPARE PARTS DASHBOARD</h1>
 

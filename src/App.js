@@ -16,7 +16,7 @@ import Client from './component/Client';
 import OrderInfo from './component/OrderInfo';
 import Homepage from './component/Homepage'
 import Pay from './component/Pay';
-import Setting from './component/Setting';
+import Report from './component/Report';
 import OrderPage from './component/OrderPage';
 import TrackingOrder from './component/TrackingOrder';
 import Confirmation from './component/Confirmation';
@@ -52,7 +52,7 @@ function App() {
         <Route exact path="Dashboard" element={<Dashboard/>}/>
           <Route exact path="AddProduct" element={<AddProduct/>}/>
           <Route exact path="OrderPage" element={<OrderPage/>}/>
-          <Route exact path="Setting" element={<Setting/>}/>
+          <Route exact path="Report" element={<Report/>}/>
           <Route exact path="Client" element={<Client/>}/>
        
           </Route>

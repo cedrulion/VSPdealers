@@ -47,8 +47,8 @@ function AdminNav() {
       icon: <BsBagFill />,
     },
     {
-      path: 'Setting',
-      name: 'Settings',
+      path: 'Report',
+      name: 'Report',
       icon: <AiOutlineSetting />,
     },
   ];
